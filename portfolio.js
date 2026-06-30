@@ -1,88 +1,47 @@
-// ---- PORTFOLIO RENDER LOGIC ----
+// ---- PORTFOLIO RENDER LOGIC (single-page layout) ----
 
-const ICONS = {
-  blue: `<svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6 16C6 13.7909 7.79086 12 10 12H22L26 17H46C48.2091 17 50 18.7909 50 21V40C50 42.2091 48.2091 44 46 44H10C7.79086 44 6 42.2091 6 40V16Z" fill="#4c56fd" fill-opacity="0.14" stroke="#4c56fd" stroke-width="2"/>
-    <path d="M6 22H50" stroke="#4c56fd" stroke-width="2"/>
-  </svg>`,
-  lime: `<svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6 16C6 13.7909 7.79086 12 10 12H22L26 17H46C48.2091 17 50 18.7909 50 21V40C50 42.2091 48.2091 44 46 44H10C7.79086 44 6 42.2091 6 40V16Z" fill="#cfff65" fill-opacity="0.35" stroke="#9bbf2f" stroke-width="2"/>
-    <path d="M6 22H50" stroke="#9bbf2f" stroke-width="2"/>
-  </svg>`,
-  black: `<svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6 16C6 13.7909 7.79086 12 10 12H22L26 17H46C48.2091 17 50 18.7909 50 21V40C50 42.2091 48.2091 44 46 44H10C7.79086 44 6 42.2091 6 40V16Z" fill="#1a1a18" fill-opacity="0.08" stroke="#1a1a18" stroke-width="2"/>
-    <path d="M6 22H50" stroke="#1a1a18" stroke-width="2"/>
-  </svg>`,
-};
-
-const landingView = document.getElementById('landing');
-const categoryView = document.getElementById('category');
-const folderGrid = document.getElementById('folder-grid');
-const catGrid = document.getElementById('cat-grid');
+const catJump = document.getElementById('cat-jump');
+const catSections = document.getElementById('cat-sections');
 const overlay = document.getElementById('overlay');
 const sidebar = document.getElementById('sidebar');
 const sidebarContent = document.getElementById('sidebar-content');
 
-function projectCount(catSlug) {
-  return PROJECTS.filter(p => p.category === catSlug).length;
+function renderJumpNav() {
+  catJump.innerHTML = CATEGORIES.map(c => `<a href="#${c.slug}">${c.title.replace('<br>', ' ')}</a>`).join('');
 }
 
-function renderFolders() {
-  folderGrid.innerHTML = CATEGORIES.map((c, i) => `
-    <a href="#${c.slug}" class="folder-card fc-${i+1}" data-cat="${c.slug}">
-      <div class="folder-card-bg"></div>
-      <span class="folder-card-count">${projectCount(c.slug)} project${projectCount(c.slug)===1?'':'s'}</span>
-      <div class="folder-icon">${ICONS[c.icon]}</div>
-      <h3>${c.title}</h3>
-      <p>${c.short}</p>
-      <span class="folder-card-arrow">Explore →</span>
-    </a>
-  `).join('');
+function renderSections() {
+  catSections.innerHTML = CATEGORIES.map(cat => {
+    const projects = PROJECTS.filter(p => p.category === cat.slug);
+    if (!projects.length) return '';
+    return `
+      <section class="cat-section" id="${cat.slug}">
+        <div class="cat-head">
+          <span class="section-eyebrow">${cat.eyebrow}</span>
+          <h2>${cat.title.replace('<br>', ' ')}</h2>
+          <p>${cat.desc}</p>
+        </div>
+        <div class="cat-grid">
+          ${projects.map(p => `
+            <div class="proj-card" data-slug="${p.slug}">
+              <div class="proj-thumb">
+                <span class="proj-tag">${p.tag}</span>
+                <img src="${p.cover}" alt="${p.title}" loading="lazy">
+              </div>
+              <div class="proj-info">
+                <h3>${p.title}</h3>
+                <p>${p.client}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+    `;
+  }).join('');
 
-  folderGrid.querySelectorAll('.folder-card').forEach(card => {
-    card.addEventListener('click', e => {
-      e.preventDefault();
-      openCategory(card.dataset.cat);
-    });
-  });
-}
-
-function openCategory(slug) {
-  const cat = CATEGORIES.find(c => c.slug === slug);
-  if (!cat) return;
-  document.getElementById('cat-eyebrow').textContent = cat.eyebrow;
-  document.getElementById('cat-title').innerHTML = cat.title.replace('<br>', ' ');
-  document.getElementById('cat-desc').textContent = cat.desc;
-
-  const projects = PROJECTS.filter(p => p.category === slug);
-  catGrid.innerHTML = projects.map(p => `
-    <div class="proj-card" data-slug="${p.slug}">
-      <div class="proj-thumb">
-        <span class="proj-tag">${p.tag}</span>
-        <img src="${p.cover}" alt="${p.title}" loading="lazy">
-      </div>
-      <div class="proj-info">
-        <h3>${p.title}</h3>
-        <p>${p.client}</p>
-      </div>
-    </div>
-  `).join('');
-
-  catGrid.querySelectorAll('.proj-card').forEach(card => {
+  catSections.querySelectorAll('.proj-card').forEach(card => {
     card.addEventListener('click', () => openProject(card.dataset.slug));
   });
-
-  landingView.style.display = 'none';
-  categoryView.style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
-  history.pushState({ view: 'category', slug }, '', `#${slug}`);
-}
-
-function openLanding(push = true) {
-  categoryView.style.display = 'none';
-  landingView.style.display = 'block';
-  window.scrollTo({ top: 0 });
-  if (push) history.pushState({ view: 'landing' }, '', '#');
 }
 
 function galleryItemHTML(item) {
@@ -141,6 +100,7 @@ function openProject(slug) {
   sidebar.classList.add('open');
   sidebar.scrollTop = 0;
   document.body.style.overflow = 'hidden';
+  history.replaceState(null, '', `#${slug}`);
 }
 
 function closeProject() {
@@ -153,25 +113,11 @@ overlay.addEventListener('click', closeProject);
 document.getElementById('sidebar-close-btn').addEventListener('click', closeProject);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeProject(); });
 
-document.getElementById('back-to-folders').addEventListener('click', e => {
-  e.preventDefault();
-  openLanding();
-});
-
-window.addEventListener('popstate', e => {
-  const state = e.state;
-  if (!state || state.view === 'landing') {
-    openLanding(false);
-  } else if (state.view === 'category') {
-    openCategory(state.slug);
-  }
-});
-
 // init
-renderFolders();
+renderJumpNav();
+renderSections();
+
 const initialHash = location.hash.replace('#', '');
-if (initialHash && CATEGORIES.some(c => c.slug === initialHash)) {
-  openCategory(initialHash);
-} else {
-  history.replaceState({ view: 'landing' }, '', '#');
+if (initialHash && PROJECTS.some(p => p.slug === initialHash)) {
+  openProject(initialHash);
 }

@@ -1,539 +1,899 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mbithe Mutavi — Brand & Design Consultant</title>
-  <meta name="description" content="Brand and design consultant for NGOs, feminist organisations, and social enterprises. Based in Nairobi, working globally.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mbithe Mutavi</title>
+<meta name="description" content="Design consultant & visual storyteller based in Nairobi, working with NGOs, feminist organisations, and social enterprises.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
 
-    :root {
-      --blue: #4c56fd;
-      --lime: #cfff65;
-      --black: #1a1a18;
-      --ink: #37352f;
-      --gray: #787774;
-      --muted: #9b9a97;
-      --light: #f7f7f5;
-      --border: #e9e9e7;
-      --white: #ffffff;
-      --heading: 'Instrument Sans', sans-serif;
-      --sans: 'DM Sans', sans-serif;
-      --max: 1080px;
-      --r: 28px;
-    }
+@font-face {
+  font-family: 'More Sugar';
+  src: url('more-sugar.regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
-    html { scroll-behavior: smooth; }
-    * { cursor: none !important; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: var(--sans);
-      color: var(--ink);
-      background: var(--light);
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
+:root {
+  --cream:  #FFFFF8;
+  --blue:   #0522FF;
+  --lime:   #AAFF0C;
+  --black:  #0A0A0A;
+  --muted:  #888882;
+  --border: rgba(10,10,10,0.09);
+  --ms:  'More Sugar', serif;
+  --sans: 'Inter', sans-serif;
+  --av:  'Avenir Next', 'Avenir', 'Nunito', Arial, sans-serif;
+}
 
-    /* ---- NAV ---- */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 22px 48px; transition: all 0.35s ease;
-    }
-    nav.scrolled {
-      background: rgba(247,247,245,0.95);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 48px;
-    }
-    .nav-logo {
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─────────────────────────────────────────
+   LOGO
+───────────────────────────────────────── */
+.site-logo {
+  text-align: center;
+  padding: 36px 24px 32px;
+  border-bottom: 1px solid var(--border);
+}
+.site-logo a {
   text-decoration: none;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+.hero {
+  padding: 80px 64px 72px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-headline {
+  font-family: var(--sans);
+  font-size: clamp(42px, 6.5vw, 84px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--black);
+  margin-bottom: 28px;
+  max-width: 860px;
+}
+.hero-headline em {
+   font-family: 'More Sugar';
+  src: url('more-sugar.regular.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 480px;
+}
+
+/* ─────────────────────────────────────────
+   CLIENT LOGO SCROLL BAR
+───────────────────────────────────────── */
+.clients-bar {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+.clients-track {
   display: flex;
   align-items: center;
+  gap: 0;
+  animation: scroll-logos 28s linear infinite;
+  width: max-content;
 }
-    .nav-links { display: flex; gap: 36px; align-items: center; }
-    .nav-links a { font-size: 14px; color: var(--gray); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--black); }
-    .nav-cta {
-      background: var(--black) !important; color: var(--white) !important;
-      padding: 8px 20px !important; border-radius: 100px;
-      font-size: 13px !important; font-weight: 500 !important;
-      transition: background 0.2s !important;
-    }
-    .nav-cta:hover { background: var(--blue) !important; }
+.clients-track:hover { animation-play-state: paused; }
+@keyframes scroll-logos {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.client-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 44px;
+  border-right: 1px solid var(--border);
+  flex-shrink: 0;
+  height: 96px;
+}
+.client-logo-item img {
+  height: 36px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.35);
+  transition: filter 0.3s ease;
+  display: block;
+}
+.client-logo-item:hover img {
+  filter: grayscale(0%) opacity(1);
+}
 
-    /* clip only hero which has decorative blobs to contain */
-    .slide-hero { overflow: hidden; }
-    .slide:not(:first-child) {
-      border-radius: var(--r) var(--r) 0 0;
-      box-shadow: 0 -12px 48px rgba(0,0,0,0.10);
-    }
-    /* drag handle pill on each incoming slide */
-    .slide:not(:first-child)::before {
-      content: '';
-      position: absolute; top: 14px; left: 50%;
-      transform: translateX(-50%);
-      width: 36px; height: 4px;
-      background: var(--border); border-radius: 2px; z-index: 2;
-    }
+/* ─────────────────────────────────────────
+   SNEAK PEEK
+───────────────────────────────────────── */
+.peek-section { padding-top: 64px; }
+.peek-header {
+  padding: 0 64px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.peek-header h2 {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+.peek-header p {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+}
+.peek-scroll-wrap { overflow: hidden; }
+.peek-scroll-track {
+  display: flex;
+  gap: 0;
+  animation: scroll-peek 40s linear infinite;
+  width: max-content;
+}
+.peek-scroll-track:hover { animation-play-state: paused; }
+@keyframes scroll-peek {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.peek-card {
+  width: 320px;
+  aspect-ratio: 4/3;
+  flex-shrink: 0;
+  background: #E2E2DC;
+  overflow: hidden;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+.peek-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.peek-card:hover img { transform: scale(1.05); }
+/* Placeholder state for images not yet added */
+.peek-card.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.peek-card.placeholder::after {
+  content: 'Image coming soon';
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 
-    .slide-hero    { z-index: 1; background: var(--light); }
-    .slide-about   { z-index: 2; background: var(--white); }
-    .slide-contact { z-index: 3; background: var(--light); }
-    .slide-footer  { z-index: 4; background: var(--white); min-height: auto; position: relative; }
+/* ─────────────────────────────────────────
+   SELECTED WORKS
+───────────────────────────────────────── */
+.works-section {
+  padding: 80px 64px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.works-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 32px;
+}
+.works-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.proj-card {
+  cursor: pointer;
+  overflow: hidden;
+  background: #E6E6E0;
+  position: relative;
+}
+.proj-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #E6E6E0;
+}
+.proj-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.proj-card:hover .proj-thumb img { transform: scale(1.04); }
+.proj-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 0 4px;
+}
+.proj-name {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+}
+.proj-cat {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
 
-    /* ---- HERO SLIDE ---- */
-    .slide-hero {
-      display: flex; align-items: center; justify-content: center;
-      text-align: center;
-    }
+/* ─────────────────────────────────────────
+   CONTACT CTA
+───────────────────────────────────────── */
+.cta-section {
+  padding: 80px 64px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.cta-heading {
+  font-family: var(--sans);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+.cta-sub {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+.btn-blue {
+  display: inline-block;
+  background: var(--blue);
+  color: var(--cream);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+.btn-blue:hover { background: var(--black); }
 
-    /* subtle decorative bg blobs */
-    .hero-blob {
-      position: absolute; border-radius: 50%;
-      pointer-events: none; z-index: 0;
-    }
-    .blob-1 {
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(76,86,253,0.07) 0%, transparent 65%);
-      top: -120px; right: -160px;
-    }
-    .blob-2 {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(207,255,101,0.15) 0%, transparent 65%);
-      bottom: 40px; left: -80px;
-    }
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+footer {
+  background: var(--black);
+  padding: 56px 64px 0;
+  overflow: hidden;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,248,0.1);
+  flex-wrap: wrap;
+}
+.footer-tagline {
+  font-size: 14px;
+  color: rgba(255,255,248,0.5);
+  line-height: 1.8;
+  max-width: 320px;
+}
+.footer-links {
+  display: flex;
+  gap: 52px;
+  flex-wrap: wrap;
+}
+.footer-col span {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,248,0.3);
+  margin-bottom: 14px;
+}
+.footer-col a, .footer-col p {
+  display: block;
+  font-size: 14px;
+  color: rgba(255,255,248,0.7);
+  text-decoration: none;
+  line-height: 2;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--cream); }
+.footer-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  line-height: 0.85;
+  padding-top: 28px;
+  /* overflow: hidden; */
+}
+.footer-mbithe {
+  font-family: var(--av);
+  font-weight: 900;
+  font-size: clamp(72px, 12vw, 160px);
+  color: rgba(255,255,248,0.15);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.footer-mutavi {
+  font-family: var(--ms);
+  font-size: clamp(72px, 12vw, 160px);
+  color: rgba(255,255,248,0.15);
+  letter-spacing: -0.01em;
+}
 
-    .hero-inner {
-      position: relative; z-index: 1;
-      max-width: 760px; margin: 0 auto;
-      padding: 120px 48px 100px;
-      display: flex; flex-direction: column;
-      align-items: center;
-    }
+/* ─────────────────────────────────────────
+   CONTACT MODAL
+───────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,10,0.65);
+  backdrop-filter: blur(6px);
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.open { opacity: 1; pointer-events: auto; }
+.modal-box {
+  background: var(--cream);
+  width: min(520px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 48px 44px;
+  position: relative;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(.2,.8,.2,1), opacity 0.3s;
+}
+.modal-overlay.open .modal-box { transform: translateY(0); opacity: 1; }
+.modal-close {
+  position: absolute; top: 20px; right: 20px;
+  width: 32px; height: 32px;
+  background: transparent; border: 1px solid var(--border);
+  font-size: 14px; color: var(--muted); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.modal-close:hover { background: var(--black); color: var(--cream); border-color: var(--black); }
+.modal-title {
+  font-family: var(--sans);
+  font-size: 22px; font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--black); margin-bottom: 6px;
+}
+.modal-sub { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 28px; }
+.form { display: flex; flex-direction: column; gap: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 5px; }
+.form-group label {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
+}
+.form-group input, .form-group select, .form-group textarea {
+  font-family: var(--sans); font-size: 14px; color: var(--black);
+  background: #F0F0EA; border: 1.5px solid transparent;
+  padding: 12px 14px; outline: none; width: 100%;
+  transition: border-color 0.2s; appearance: none;
+  border-radius: 0;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: var(--blue); background: var(--cream);
+}
+.form-group input::placeholder, .form-group textarea::placeholder { color: var(--muted); }
+.form-group textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+.submit-btn {
+  font-family: var(--sans); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--cream); background: var(--blue); border: none;
+  padding: 14px 32px; align-self: flex-start;
+  cursor: pointer; transition: background 0.2s;
+}
+.submit-btn:hover { background: var(--black); }
+.form-success {
+  display: none; padding: 14px 16px;
+  background: #EAFAF1; border: 1px solid #B7E9CC;
+  font-size: 13px; color: #2d6a4f;
+}
 
-    .hero-pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--lime); color: var(--black);
-      font-size: 12px; font-weight: 500; letter-spacing: 0.06em;
-      padding: 6px 18px; border-radius: 100px;
-      margin-bottom: 36px;
-    }
-    .hero-pill::before { content: '✦'; font-size: 10px; }
-    .hero-pill::after  { content: '✦'; font-size: 10px; }
+/* ─────────────────────────────────────────
+   PROJECT FULL-PAGE OVERLAY (SVG 2 layout)
+───────────────────────────────────────── */
+.proj-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--cream);
+  z-index: 800;
+  overflow-y: auto;
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+}
+.proj-overlay.open { transform: translateY(0); }
 
-    .hero-title {
-      font-family: var(--heading);
-      font-size: clamp(46px, 6vw, 80px);
-      font-weight: 700; line-height: 1.04;
-      letter-spacing: -0.03em; color: var(--black);
-      margin-bottom: 28px;
-    }
-    .hero-title em { font-style: italic; color: var(--blue); font-weight: 600; }
+.proj-page-logo {
+  text-align: center;
+  padding: 36px 24px 32px;
+  border-bottom: 1px solid var(--border);
+}
+.proj-page-logo a {
+  text-decoration: none;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--black);
+  cursor: pointer;
+}
 
-    .hero-desc {
-      font-size: 17px; color: var(--gray);
-      line-height: 1.75; margin-bottom: 44px;
-      max-width: 520px;
-    }
+.proj-page-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 72px 64px 80px;
+}
 
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
-    .btn-primary {
-      background: var(--black); color: var(--white);
-      font-family: var(--sans); font-size: 14px; font-weight: 500;
-      padding: 13px 28px; border-radius: 100px; text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
-      display: inline-flex; align-items: center; gap: 6px;
-    }
-    .btn-primary:hover { background: var(--blue); transform: translateY(-1px); }
-    .btn-secondary {
-      background: transparent; color: var(--gray);
-      font-family: var(--sans); font-size: 14px;
-      padding: 13px 28px; border-radius: 100px;
-      border: 1px solid var(--border); text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-secondary:hover { border-color: var(--black); color: var(--black); }
+.proj-page-title {
+  font-family: var(--av);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--black);
+  margin-bottom: 28px;
+}
 
-    /* client ticker */
-    .hero-clients {
-      margin-top: 64px; padding-top: 32px;
-      border-top: 1px solid var(--border);
-      width: 100%; text-align: center;
-    }
-    .hero-clients-label {
-      font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em;
-      color: var(--muted); margin-bottom: 16px; display: block;
-    }
-    .hero-clients-list {
-      font-family: var(--heading); font-size: 15px; font-weight: 500;
-      color: var(--black); opacity: 0.5; letter-spacing: 0.01em;
-    }
+.proj-page-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 36px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+.proj-meta-row {
+  font-size: 14px;
+  color: var(--black);
+  line-height: 1.7;
+}
+.proj-meta-row strong { font-weight: 600; }
+.proj-meta-row a { color: var(--blue); text-decoration: none; }
+.proj-meta-row a:hover { text-decoration: underline; }
 
+.proj-page-desc {
+  font-family: var(--av);
+  font-size: 16px;
+  line-height: 1.85;
+  color: #3A3A38;
+  margin-bottom: 52px;
+}
+.proj-page-desc p { margin-bottom: 20px; }
 
-    /* ---- ABOUT SLIDE ---- */
-    .slide-about { display: flex; align-items: flex-start; min-height: auto; padding-bottom: 60px; }
-    .about-inner {
-      width: 100%; max-width: 760px; margin: 0 auto;
-      padding: 80px 48px 80px;
-    }
+.proj-page-image {
+  width: 100%;
+  margin-bottom: 4px;
+  background: #E6E6E0;
+  overflow: hidden;
+}
+.proj-page-image img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+.proj-page-image + .proj-page-image { margin-top: 4px; }
 
-    /* about text */
-    .about-text { padding-top: 8px; }
-    .section-eyebrow {
-      font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em;
-      color: var(--muted); margin-bottom: 20px; display: block;
-    }
-    .about-title {
-      font-family: var(--heading); font-size: clamp(32px, 4vw, 52px);
-      font-weight: 700; line-height: 1.1; letter-spacing: -0.025em;
-      margin-bottom: 28px; color: var(--black);
-    }
-    .about-text p { font-size: 16px; color: #525252; line-height: 1.85; margin-bottom: 20px; }
-    .clients-block { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border); }
-    .clients-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); display: block; margin-bottom: 10px; }
-    .clients-list { font-family: var(--heading); font-size: 17px; font-weight: 500; color: var(--black); line-height: 1.9; }
+.proj-page-image-group { margin-bottom: 52px; }
 
-    /* Stats row under text */
-    .stats-row {
-      display: grid; grid-template-columns: repeat(3,1fr);
-      gap: 0; margin-top: 36px;
-      border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
-    }
-    .stat-item {
-      padding: 20px; text-align: center;
-      border-right: 1px solid var(--border);
-    }
-    .stat-item:last-child { border-right: none; }
-    .stat-num { font-family: var(--heading); font-size: 36px; font-weight: 700; color: var(--blue); display: block; line-height: 1; margin-bottom: 4px; letter-spacing: -0.02em; }
-    .stat-label { font-size: 12px; color: var(--gray); }
+.proj-testimonial {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 36px 40px;
+  margin-bottom: 52px;
+}
+.proj-testimonial blockquote {
+  font-family: var(--av);
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--black);
+  margin-bottom: 16px;
+}
+.proj-testimonial cite {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--black);
+  font-style: normal;
+  display: block;
+}
+.proj-testimonial cite span {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 2px;
+}
 
-    .social-links { display: flex; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
-    .social-links a {
-      font-size: 13px; color: var(--gray); text-decoration: none;
-      transition: color 0.2s; display: flex; align-items: center; gap: 4px;
-      border: 1px solid var(--border); padding: 7px 14px; border-radius: 100px;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .social-links a:hover { color: var(--blue); border-color: var(--blue); }
-    .social-links a::after { content: '↗'; font-size: 11px; }
+.proj-page-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.proj-nav-btn {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--black);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.proj-nav-btn:hover { opacity: 0.5; }
 
-    /* ---- CONTACT SLIDE ---- */
-    .slide-contact { display: flex; align-items: flex-start; padding-bottom: 60px; min-height: auto; }
-    .contact-inner {
-      width: 100%; max-width: var(--max); margin: 0 auto;
-      padding: 80px 48px 80px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start;
-    }
-
-    /* contact left */
-
-    .contact-title {
-      font-family: var(--heading); font-size: clamp(28px, 3.2vw, 44px);
-      font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 14px;
-    }
-    .contact-desc { font-size: 15px; color: var(--gray); line-height: 1.7; }
-
-    /* Right: form */
-    .form { display: flex; flex-direction: column; gap: 20px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .form-group { display: flex; flex-direction: column; gap: 7px; }
-    .form-group label { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--gray); }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      font-family: var(--sans); font-size: 15px; color: var(--black);
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 12px; padding: 13px 16px; outline: none;
-      transition: border-color 0.2s; width: 100%; appearance: none;
-    }
-    .form-group input::placeholder, .form-group textarea::placeholder { color: var(--muted); }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue); }
-    .form-group textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
-    .submit-btn {
-      font-family: var(--sans); font-size: 15px; font-weight: 500;
-      color: var(--white); background: var(--blue); border: none;
-      border-radius: 100px; padding: 14px 32px; align-self: flex-start;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .submit-btn:hover { background: var(--black); transform: translateY(-1px); }
-    .submit-btn:disabled { opacity: 0.6; transform: none; }
-    .form-success {
-      display: none; padding: 18px 22px;
-      background: #eafaf1; border: 1px solid #b7e9cc;
-      border-radius: 12px; font-size: 14px; color: #2d6a4f;
-    }
-
-    /* ---- FOOTER ---- */
-    .slide-footer { padding: 28px 48px; border-top: 1px solid var(--border); min-height: auto; }
-    .footer-inner {
-      max-width: var(--max); margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 16px;
-    }
-    .footer-logo { font-family: var(--heading); font-size: 18px; font-weight: 700; color: var(--black); letter-spacing: -0.01em; }
-    .footer-copy { font-size: 13px; color: var(--muted); }
-    .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 13px; color: var(--gray); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--blue); }
-
-    /* ---- FADE IN ON LOAD ---- */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .fade-up { opacity: 0; animation: fadeUp 0.7s ease forwards; }
-    .d1 { animation-delay: 0.08s; } .d2 { animation-delay: 0.2s; }
-    .d3 { animation-delay: 0.34s; } .d4 { animation-delay: 0.48s; }
-    .d5 { animation-delay: 0.62s; }
-
-    /* ---- CUSTOM CURSOR ---- */
-    #cursor {
-      position: fixed; top: 0; left: 0;
-      width: 12px; height: 12px;
-      background: var(--black); border-radius: 50%;
-      pointer-events: none; z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
-    }
-    #cursor-ring {
-      position: fixed; top: 0; left: 0;
-      width: 36px; height: 36px;
-      border: 1.5px solid rgba(26,26,24,0.35); border-radius: 50%;
-      pointer-events: none; z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: width 0.25s ease, height 0.25s ease, border-color 0.2s ease;
-    }
-    body.cursor-hover #cursor { width: 8px; height: 8px; background: var(--blue); }
-    body.cursor-hover #cursor-ring { width: 46px; height: 46px; border-color: var(--blue); }
-
-    /* ---- RESPONSIVE ---- */
-    @media (max-width: 900px) {
-      * { cursor: auto !important; } #cursor { display: none; }
-      nav, nav.scrolled { padding: 16px 24px; }
-      .nav-links { gap: 20px; } .nav-cta { display: none; }
-      .hero-inner { padding: 100px 24px 80px; }
-      .hero-title { font-size: 38px; }
-      .about-inner { grid-template-columns: 1fr; padding: 64px 24px; gap: 40px; }
-      .about-image-wrap { aspect-ratio: 4/3; max-height: 340px; }
-      .stats-row { grid-template-columns: repeat(3,1fr); }
-      .contact-inner { grid-template-columns: 1fr; padding: 64px 24px; gap: 40px; }
-      .contact-gif-wrap { aspect-ratio: 16/9; }
-      .form-row { grid-template-columns: 1fr; }
-      .slide-footer { padding: 24px; }
-      .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .slide:not(:first-child) { border-radius: 16px 16px 0 0; }
-    }
-    @media (max-width: 480px) {
-      .stats-row { grid-template-columns: 1fr; }
-      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
-      .stat-item:last-child { border-bottom: none; }
-    }
-  </style>
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 800px) {
+  .hero { padding: 56px 24px 48px; }
+  .works-section { padding: 56px 24px; }
+  .works-grid { grid-template-columns: 1fr; }
+  .cta-section { padding: 56px 24px; }
+  footer { padding: 44px 24px 0; }
+  .footer-links { gap: 28px; }
+  .peek-header { padding: 0 24px 28px; }
+  .proj-page-inner { padding: 48px 24px 56px; }
+  .proj-testimonial { padding: 24px 22px; }
+  .form-row { grid-template-columns: 1fr; }
+  .modal-box { padding: 32px 22px; }
+  .site-logo { padding: 24px 24px 20px; }
+}
+</style>
 </head>
 <body>
 
-  <div id="cursor"></div>
-  <div id="cursor-ring"></div>
+<!-- ── LOGO ── -->
+<header class="site-logo">
+  <a href="/Users/graphics/Documents/GitHub/mbithemutavi/logo.png" id="home-link">Mbithe Mutavi</a>
+</header>
 
-  <!-- NAV -->
-  <nav id="nav">
-    <a href="#" class="nav-logo"><img src="logo.png" alt="Mbithe Mutavi" style="height:36px; width:auto; display:block;"></a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="#contact">Contact</a>
-      <a href="#contact" class="nav-cta">Work with me</a>
-    </div>
-  </nav>
+<!-- ── HERO ── -->
+<section class="hero">
+  <h1 class="hero-headline">
+    I help <em>impact</em> organisations<br>
+    <em>communicate</em> their missions
+  </h1>
+  <p class="hero-sub">Design consultant &amp; visual storyteller based in Nairobi, working with NGOs, feminist organisations, and social enterprises.</p>
+</section>
 
-  <div class="slides-wrapper">
-
-    <!-- SLIDE 1: HERO -->
-    <section class="slide slide-hero" id="hero">
-      <div class="hero-blob blob-1"></div>
-      <div class="hero-blob blob-2"></div>
-      <div class="hero-inner">
-        <div class="hero-pill fade-up d1">Design partner for change-makers</div>
-        <h1 class="hero-title fade-up d2">
-          I help <em>impact<br>organizations</em><br>communicate<br>their missions
-        </h1>
-        <p class="hero-desc fade-up d3">
-          Design consultant &amp; visual storyteller based in Nairobi, working with NGOs, feminist organisations, and social enterprises.
-        </p>
-        <div class="hero-actions fade-up d4">
-          <a href="#contact" class="btn-primary">Work with me →</a>
-          <a href="portfolio.html" class="btn-secondary">View portfolio</a>
-        </div>
-        <div class="hero-clients fade-up d5">
-          <span class="hero-clients-label">Trusted by</span>
-          <div class="hero-clients-list">UNAIDS - Education plus | MMTD | Ipas | Feminists in Kenya | Let Girls Learn | The 50 Percent | Digital Dada Podcast | Akina Mama Wa Afrika | Sweeven cafe | Munchies Next Door </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SLIDE 2: ABOUT -->
-    <section class="slide slide-about" id="about">
-      <div class="about-inner">
-
-        <!-- text -->
-        <div class="about-text">
-          <span class="section-eyebrow">About</span>
-          <h2 class="about-title">Design is a tool for equity.</h2>
-          <p>I'm a brand and design consultant specialising in visual communication for social impact organisations. For the past 10+ years, I've partnered with NGOs, feminist publications, and social enterprises to create design that doesn't just look good — it moves missions forward.</p>
-          <p>My approach combines strategic thinking with hand-crafted illustration and culturally grounded visual storytelling. Whether designing a brand identity for a climate initiative, laying out a 50-page training manual, or illustrating a children's book, I bring both creative vision and project management rigor to every collaboration.</p>
-          <p>I work with organisations that prioritise community and inclusion, need design that reflects African realities, and value thoughtful, strategic creative partnership.</p>
-
-          <div class="stats-row">
-            <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Years experience</span></div>
-            <div class="stat-item"><span class="stat-num">30+</span><span class="stat-label">Organisations</span></div>
-            <div class="stat-item"><span class="stat-num">3</span><span class="stat-label">Continents</span></div>
-          </div>
-
-          <div class="social-links">
-            <a href="https://www.behance.net/mbithemutavi" target="_blank">Behance</a>
-            <a href="https://www.linkedin.com/in/easter-mbithe/" target="_blank">LinkedIn</a>
-            <a href="https://www.instagram.com/mbithe.mutavi" target="_blank">Instagram</a>
-            <a href="https://affectionate-situation-608565.framer.app/portfolio" target="_blank">Explore My sketches</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SLIDE 3: CONTACT -->
-    <section class="slide slide-contact" id="contact">
-      <div class="contact-inner">
-
-        <!-- LEFT: gif + heading -->
-        <div class="contact-left">
-          <h2 class="contact-title">Let's work<br>together</h2>
-          <p class="contact-desc">Currently accepting new projects for organisations creating positive change. Whether you need a brand identity, publication design, or custom illustration — let's talk.</p>
-        </div>
-
-        <!-- RIGHT: form -->
-        <div class="contact-right">
-          <span class="section-eyebrow">Contact</span>
-          <form class="form" id="contact-form" action="https://formspree.io/f/xqegqewd" method="POST">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="project">Project type</label>
-              <select id="project" name="project">
-                <option value="">What are you working on?</option>
-                <option value="brand-identity">Brand identity</option>
-                <option value="editorial">Editorial / Publication design</option>
-                <option value="illustration">Illustration</option>
-                <option value="web">Web design</option>
-                <option value="children">Children's book</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Tell me about your project</label>
-              <textarea id="message" name="message" placeholder="What are you working on? What's the timeline? What do you hope design will do for your mission?" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn" id="submit-btn">Send message →</button>
-            <div class="form-success" id="form-success">Message sent — I'll be in touch within 2 business days.</div>
-          </form>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SLIDE 4: FOOTER -->
-    <section class="slide slide-footer">
-      <div class="footer-inner">
-        <span class="footer-logo">Mbithe Mutavi</span>
-        <span class="footer-copy">Based in Nairobi, Kenya · © 2025</span>
-        <div class="footer-links">
-          <a href="https://www.behance.net/mbithemutavi" target="_blank">Behance</a>
-          <a href="https://www.linkedin.com/in/easter-mbithe/" target="_blank">LinkedIn</a>
-          <a href="https://www.instagram.com/mbithe.mutavi" target="_blank">Instagram</a>
-        </div>
-      </div>
-    </section>
-
+<!-- ── CLIENT LOGOS ── -->
+<div class="clients-bar">
+  <div class="clients-track" id="clients-track">
+    <!-- filled by JS -->
   </div>
+</div>
 
-  <script>
-    // ---- CURSOR ----
-    const cur  = document.getElementById('cursor');
-    const ring = document.getElementById('cursor-ring');
-    let rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => {
-      cur.style.left = e.clientX + 'px';
-      cur.style.top  = e.clientY + 'px';
-      // ring follows with slight lag via RAF
-      rx += (e.clientX - rx) * 0.18;
-      ry += (e.clientY - ry) * 0.18;
-      ring.style.left = e.clientX + 'px';
-      ring.style.top  = e.clientY + 'px';
-    });
-    document.querySelectorAll('a,button,input,select,textarea').forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-    });
+<!-- ── SNEAK PEEK ── -->
+<section class="peek-section">
+  <div class="peek-header">
+    <h2>Sneak peak of my works</h2>
+    <p>a scrolling bar — works that haven't been featured on my portfolio</p>
+  </div>
+  <div class="peek-scroll-wrap">
+    <div class="peek-scroll-track" id="peek-track">
+      <!-- 10 placeholder slots — replace src with your images -->
+      <div class="peek-card placeholder"></div>
+      <div class="peek-card placeholder"></div>
+      <div class="peek-card placeholder"></div>
+      <div class="peek-card placeholder"></div>
+      <div class="peek-card placeholder"></div>
+      <div class="peek-card placeholder"></div>
+      <div class="peek-card placeholder"></div>
+      <div class="peek-card placeholder"></div>
+      <!-- duplicated for infinite loop -->
+      <div class="peek-card placeholder"></div>
+      <div class="peek-card placeholder"></div>
+      <div class="peek-card placeholder"></div>
+      <div class="peek-card placeholder"></div>
+      <div class="peek-card placeholder"></div>
+      <div class="peek-card placeholder"></div>
+      <div class="peek-card placeholder"></div>
+      <div class="peek-card placeholder"></div>
+    </div>
+  </div>
+</section>
 
-    // ---- NAV ----
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
+<!-- ── SELECTED WORKS ── -->
+<section class="works-section" id="works">
+  <span class="works-label">Select works</span>
+  <div class="works-grid" id="works-grid"></div>
+</section>
 
-    // ---- SCROLL REVEAL ----
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.style.opacity = '1';
-          e.target.style.transform = 'translateY(0)';
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
+<!-- ── CONTACT CTA ── -->
+<section class="cta-section">
+  <h2 class="cta-heading">Ready to build<br>something amazing?</h2>
+  <p class="cta-sub">I'd love to connect with you!</p>
+  <button class="btn-blue" id="open-contact">CONTACT ME</button>
+</section>
 
-    ['.about-inner', '.contact-inner'].forEach(sel => {
-      const el = document.querySelector(sel);
-      if (!el) return;
-      el.style.cssText += 'opacity:0;transform:translateY(24px);transition:opacity 0.75s ease,transform 0.75s ease;';
-      obs.observe(el);
-    });
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <p class="footer-tagline">Design that centres the mission. Based in Nairobi, working globally.</p>
+    <div class="footer-links">
+      <div class="footer-col">
+        <span>Navigate</span>
+        <a href="#works">Works</a>
+        <a href="#" id="footer-contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <span>Social</span>
+        <a href="https://www.behance.net/mbithemutavi" target="_blank">Behance</a>
+        <a href="https://www.linkedin.com/in/easter-mbithe/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/mbithe.mutavi" target="_blank">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <span>Email</span>
+        <p>hello@mbithemutavi.com</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-name-row">
+    <span class="footer-mbithe">MBITHE&nbsp;</span><span class="footer-mutavi">Mutavi</span>
+  </div>
+</footer>
 
-    // ---- FORM ----
-    const form = document.getElementById('contact-form');
-    const btn  = document.getElementById('submit-btn');
-    const succ = document.getElementById('form-success');
-    form.addEventListener('submit', async e => {
-      e.preventDefault();
-      btn.textContent = 'Sending...'; btn.disabled = true;
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST', body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          btn.style.display = 'none';
-          succ.style.display = 'block';
-          form.reset();
-        } else {
-          btn.textContent = 'Something went wrong'; btn.disabled = false;
-        }
-      } catch {
-        btn.textContent = 'Network error — try again'; btn.disabled = false;
+<!-- ── CONTACT MODAL ── -->
+<div class="modal-overlay" id="contact-modal">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close">✕</button>
+    <h3 class="modal-title">Let's work together</h3>
+    <p class="modal-sub">Tell me about your project — I'll be in touch within 2 business days.</p>
+    <form class="form" id="contact-form" action="https://formspree.io/f/xqegqewd" method="POST">
+      <div class="form-row">
+        <div class="form-group"><label>Name</label><input type="text" name="name" placeholder="Your name" required></div>
+        <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="your@email.com" required></div>
+      </div>
+      <div class="form-group">
+        <label>Project type</label>
+        <select name="project">
+          <option value="">What are you working on?</option>
+          <option>Brand identity</option>
+          <option>Editorial / Publication</option>
+          <option>Illustration</option>
+          <option>Web design</option>
+          <option>Children's book</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tell me about your project</label>
+        <textarea name="message" placeholder="What are you working on? What do you hope design will do for your mission?" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn" id="submit-btn">Send message</button>
+      <div class="form-success" id="form-success">Sent! I'll be in touch within 2 business days.</div>
+    </form>
+  </div>
+</div>
+
+<!-- ── PROJECT FULL-PAGE OVERLAY ── -->
+<div class="proj-overlay" id="proj-overlay">
+  <div class="proj-page-logo">
+    <a id="proj-back-logo">Mbithe Mutavi</a>
+  </div>
+  <div class="proj-page-inner" id="proj-page-inner"></div>
+</div>
+
+<script src="portfolio-data.js"></script>
+<script>
+// ── CLIENT LOGOS ──
+const CLIENTS = [
+  { name: 'Heinrich Böll Stiftung', src: 'images/clients/heinrich-boll.png' },
+  { name: 'UNAIDS', src: 'images/clients/unaids.png' },
+  { name: 'Ipas', src: 'images/clients/ipas.png' },
+  { name: 'The 50 Percent', src: 'images/clients/the-50-percent.png' },
+  { name: 'MMTD', src: 'images/clients/mmtd.png' },
+  { name: 'Feminists in Kenya', src: 'images/clients/fik.png' },
+  { name: 'Let Girls Learn Initiative', src: 'images/clients/lgli.png' },
+  { name: 'Digital Dada', src: 'images/clients/digital-dada.png' },
+];
+
+function buildClientBar() {
+  const track = document.getElementById('clients-track');
+  // duplicate for seamless loop
+  const html = [...CLIENTS, ...CLIENTS].map(c =>
+    `<div class="client-logo-item"><img src="${c.src}" alt="${c.name}" loading="lazy"></div>`
+  ).join('');
+  track.innerHTML = html;
+}
+
+// ── WORKS GRID ──
+function buildWorksGrid() {
+  const grid = document.getElementById('works-grid');
+  grid.innerHTML = PROJECTS.map(p => `
+    <div class="proj-card" data-slug="${p.slug}">
+      <div class="proj-thumb">
+        <img src="${p.cover}" alt="${p.title}" loading="lazy">
+      </div>
+      <div class="proj-foot">
+        <span class="proj-name">${p.title}</span>
+        <span class="proj-cat">${p.tag}</span>
+      </div>
+    </div>
+  `).join('');
+  grid.querySelectorAll('.proj-card').forEach(c =>
+    c.addEventListener('click', () => openProject(c.dataset.slug))
+  );
+}
+
+// ── PROJECT PAGE ──
+const projOverlay = document.getElementById('proj-overlay');
+const projInner = document.getElementById('proj-page-inner');
+let currentSlug = null;
+
+function galleryHTML(items) {
+  return '<div class="proj-page-image-group">' +
+    items.map(item => {
+      if (item.type === 'image') {
+        return `<div class="proj-page-image" style="margin-bottom:4px"><img src="${item.src}" alt=""></div>`;
       }
+      if (item.type === 'mockup') {
+        return `<div class="proj-page-image" style="margin-bottom:4px"><img src="${item.desktop}" alt=""></div>`;
+      }
+      if (item.type === 'mockup-row') {
+        return `<div class="proj-page-image" style="margin-bottom:4px"><img src="${item.desktop}" alt=""></div>`;
+      }
+      return '';
+    }).join('') + '</div>';
+}
+
+function openProject(slug) {
+  const p = PROJECTS.find(x => x.slug === slug);
+  if (!p) return;
+  currentSlug = slug;
+
+  const idx = PROJECTS.indexOf(p);
+  const next = PROJECTS[(idx + 1) % PROJECTS.length];
+  const prev = PROJECTS[(idx - 1 + PROJECTS.length) % PROJECTS.length];
+
+  const desc = p.desc.split(/\n\n/).map(par => `<p>${par}</p>`).join('');
+  const testimonial = p.testimonial ? `
+    <div class="proj-testimonial">
+      <blockquote>"${p.testimonial.quote}"</blockquote>
+      <cite>${p.testimonial.author}<span>${p.testimonial.role||''}</span></cite>
+    </div>` : '';
+
+  projInner.innerHTML = `
+    <h1 class="proj-page-title">${p.title}</h1>
+    <div class="proj-page-meta">
+      <div class="proj-meta-row"><strong>Client</strong> : ${p.client}</div>
+      <div class="proj-meta-row"><strong>Category</strong> : ${p.tag}</div>
+      ${p.url ? `<div class="proj-meta-row"><strong>Live project link</strong> : <a href="${p.url}" target="_blank">${p.url}</a></div>` : ''}
+    </div>
+    <div class="proj-page-desc">${desc}</div>
+    ${galleryHTML(p.gallery)}
+    ${testimonial}
+    <nav class="proj-page-nav">
+      <button class="proj-nav-btn" id="proj-back">← Back to all works</button>
+      <button class="proj-nav-btn" id="proj-next">Next project →</button>
+    </nav>
+  `;
+
+  projOverlay.classList.add('open');
+  projOverlay.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+
+  document.getElementById('proj-back').addEventListener('click', closeProject);
+  document.getElementById('proj-next').addEventListener('click', () => openProject(next.slug));
+}
+
+function closeProject() {
+  projOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('proj-back-logo').addEventListener('click', closeProject);
+document.getElementById('home-link').addEventListener('click', e => { e.preventDefault(); closeProject(); });
+
+// ── CONTACT MODAL ──
+const contactModal = document.getElementById('contact-modal');
+
+function openModal() {
+  contactModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  contactModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+['open-contact', 'footer-contact'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('click', e => { e.preventDefault(); openModal(); });
+});
+document.getElementById('modal-close').addEventListener('click', closeModal);
+contactModal.addEventListener('click', e => { if (e.target === contactModal) closeModal(); });
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeModal(); closeProject(); }
+});
+
+// ── FORM ──
+const form = document.getElementById('contact-form');
+const submitBtn = document.getElementById('submit-btn');
+const formSuccess = document.getElementById('form-success');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  submitBtn.textContent = 'Sending…'; submitBtn.disabled = true;
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' }
     });
-  </script>
+    if (res.ok) { submitBtn.style.display = 'none'; formSuccess.style.display = 'block'; form.reset(); }
+    else { submitBtn.textContent = 'Something went wrong'; submitBtn.disabled = false; }
+  } catch { submitBtn.textContent = 'Network error — try again'; submitBtn.disabled = false; }
+});
+
+// ── INIT ──
+buildClientBar();
+buildWorksGrid();
+</script>
 </body>
 </html>

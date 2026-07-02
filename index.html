@@ -27,9 +27,9 @@
   --black:  #0A0A0A;
   --muted:  #888882;
   --border: rgba(10,10,10,0.09);
-  --ms:  'More Sugar', serif;
-  --sans: 'Inter', sans-serif;
-  --av:  'Avenir Next', 'Avenir', 'Nunito', Arial, sans-serif;
+  --ms:     'More Sugar', serif;
+  --sans:   'Inter', sans-serif;
+  --av:     'Avenir Next', 'Avenir', 'Nunito', Arial, sans-serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -41,9 +41,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ─────────────────────────────────────────
-   LOGO
-───────────────────────────────────────── */
+/* ─── LOGO ─── */
 .site-logo {
   text-align: center;
   padding: 36px 24px 32px;
@@ -59,9 +57,7 @@ body {
   color: var(--black);
 }
 
-/* ─────────────────────────────────────────
-   HERO
-───────────────────────────────────────── */
+/* ─── HERO ─── */
 .hero {
   padding: 80px 64px 72px;
   max-width: 1200px;
@@ -78,8 +74,7 @@ body {
   max-width: 860px;
 }
 .hero-headline em {
-  font-family: 'More Sugar';
-  src: url('fonts/more-sugar-regular.ttf') format('truetype');
+  font-family: 'More Sugar', serif;
   font-style: normal;
   font-weight: 400;
 }
@@ -91,20 +86,15 @@ body {
   max-width: 480px;
 }
 
-/* ─────────────────────────────────────────
-   CLIENT LOGO SCROLL BAR
-───────────────────────────────────────── */
+/* ─── CLIENT LOGO SCROLL BAR ─── */
 .clients-bar {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   overflow: hidden;
-  padding: 0;
-  position: relative;
 }
 .clients-track {
   display: flex;
   align-items: center;
-  gap: 0;
   animation: scroll-logos 28s linear infinite;
   width: max-content;
 }
@@ -135,9 +125,7 @@ body {
   filter: grayscale(0%) opacity(1);
 }
 
-/* ─────────────────────────────────────────
-   SNEAK PEEK
-───────────────────────────────────────── */
+/* ─── SNEAK PEEK ─── */
 .peek-section { padding-top: 64px; }
 .peek-header {
   padding: 0 64px 28px;
@@ -160,7 +148,6 @@ body {
 .peek-scroll-wrap { overflow: hidden; }
 .peek-scroll-track {
   display: flex;
-  gap: 0;
   animation: scroll-peek 40s linear infinite;
   width: max-content;
 }
@@ -176,7 +163,6 @@ body {
   background: #E2E2DC;
   overflow: hidden;
   border-right: 1px solid var(--border);
-  position: relative;
 }
 .peek-card img {
   width: 100%; height: 100%;
@@ -185,7 +171,6 @@ body {
   transition: transform 0.5s ease;
 }
 .peek-card:hover img { transform: scale(1.05); }
-/* Placeholder state for images not yet added */
 .peek-card.placeholder {
   display: flex;
   align-items: center;
@@ -199,12 +184,10 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* ─────────────────────────────────────────
-   SELECTED WORKS
-───────────────────────────────────────── */
+/* ─── SELECTED WORKS ─── */
 .works-section {
   padding: 64px 80px 80px;
-  max-width: 1400px;
+  max-width: 1360px;
   margin: 0 auto;
 }
 .works-label {
@@ -214,7 +197,7 @@ body {
   text-transform: uppercase;
   color: var(--muted);
   display: block;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 .works-grid {
   display: grid;
@@ -223,15 +206,14 @@ body {
 }
 .proj-card {
   cursor: pointer;
-  overflow: hidden;
+  overflow: visible;
   background: transparent;
-  position: relative;
 }
 .proj-thumb {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: transparent;
+  background: #E6E6E0;
 }
 .proj-thumb img {
   width: 100%; height: 100%;
@@ -245,28 +227,25 @@ body {
   justify-content: space-between;
   align-items: baseline;
   padding: 12px 0 0;
+  gap: 16px;
 }
 .proj-name {
   font-family: var(--sans);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--black);
+  line-height: 1.4;
 }
 .proj-cat {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
-}
-.proj-caption-text {
-  font-family: 'More Sugar', serif;
-  font-size: 17px;
-  color: var(--muted);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-/* ─────────────────────────────────────────
-   CONTACT CTA
-───────────────────────────────────────── */
+/* ─── CONTACT CTA ─── */
 .cta-section {
   padding: 80px 64px;
   text-align: center;
@@ -296,7 +275,6 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 16px 40px;
-  border-radius: 0;
   border: none;
   cursor: pointer;
   transition: background 0.2s;
@@ -304,9 +282,7 @@ body {
 }
 .btn-blue:hover { background: var(--black); }
 
-/* ─────────────────────────────────────────
-   FOOTER
-───────────────────────────────────────── */
+/* ─── FOOTER ─── */
 footer {
   background: var(--black);
   padding: 56px 64px 0;
@@ -327,11 +303,7 @@ footer {
   line-height: 1.8;
   max-width: 320px;
 }
-.footer-links {
-  display: flex;
-  gap: 52px;
-  flex-wrap: wrap;
-}
+.footer-links { display: flex; gap: 52px; flex-wrap: wrap; }
 .footer-col span {
   display: block;
   font-size: 10px;
@@ -352,10 +324,8 @@ footer {
 .footer-name-row {
   display: flex;
   align-items: baseline;
-  gap: 0;
   line-height: 0.85;
   padding-top: 28px;
-  /* overflow: hidden; */
 }
 .footer-mbithe {
   font-family: var(--av);
@@ -366,27 +336,21 @@ footer {
   letter-spacing: -0.02em;
 }
 .footer-mutavi {
-  font-family: var(--ms);
+  font-family: 'More Sugar', serif;
   font-size: clamp(72px, 12vw, 160px);
   color: rgba(255,255,248,0.15);
   letter-spacing: -0.01em;
 }
 
-/* ─────────────────────────────────────────
-   CONTACT MODAL
-───────────────────────────────────────── */
+/* ─── CONTACT MODAL ─── */
 .modal-overlay {
-  position: fixed;
-  inset: 0;
+  position: fixed; inset: 0;
   background: rgba(10,10,10,0.65);
   backdrop-filter: blur(6px);
   z-index: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   padding: 24px;
-  opacity: 0;
-  pointer-events: none;
+  opacity: 0; pointer-events: none;
   transition: opacity 0.3s ease;
 }
 .modal-overlay.open { opacity: 1; pointer-events: auto; }
@@ -397,8 +361,7 @@ footer {
   overflow-y: auto;
   padding: 48px 44px;
   position: relative;
-  transform: translateY(20px);
-  opacity: 0;
+  transform: translateY(20px); opacity: 0;
   transition: transform 0.35s cubic-bezier(.2,.8,.2,1), opacity 0.3s;
 }
 .modal-overlay.open .modal-box { transform: translateY(0); opacity: 1; }
@@ -411,30 +374,19 @@ footer {
   transition: all 0.2s;
 }
 .modal-close:hover { background: var(--black); color: var(--cream); border-color: var(--black); }
-.modal-title {
-  font-family: var(--sans);
-  font-size: 22px; font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--black); margin-bottom: 6px;
-}
+.modal-title { font-family: var(--sans); font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: var(--black); margin-bottom: 6px; }
 .modal-sub { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 28px; }
 .form { display: flex; flex-direction: column; gap: 16px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form-group { display: flex; flex-direction: column; gap: 5px; }
-.form-group label {
-  font-size: 10px; font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--muted);
-}
+.form-group label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .form-group input, .form-group select, .form-group textarea {
   font-family: var(--sans); font-size: 14px; color: var(--black);
   background: #F0F0EA; border: 1.5px solid transparent;
   padding: 12px 14px; outline: none; width: 100%;
-  transition: border-color 0.2s; appearance: none;
-  border-radius: 0;
+  transition: border-color 0.2s; appearance: none; border-radius: 0;
 }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-  border-color: var(--blue); background: var(--cream);
-}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue); background: var(--cream); }
 .form-group input::placeholder, .form-group textarea::placeholder { color: var(--muted); }
 .form-group textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
 .submit-btn {
@@ -445,18 +397,11 @@ footer {
   cursor: pointer; transition: background 0.2s;
 }
 .submit-btn:hover { background: var(--black); }
-.form-success {
-  display: none; padding: 14px 16px;
-  background: #EAFAF1; border: 1px solid #B7E9CC;
-  font-size: 13px; color: #2d6a4f;
-}
+.form-success { display: none; padding: 14px 16px; background: #EAFAF1; border: 1px solid #B7E9CC; font-size: 13px; color: #2d6a4f; }
 
-/* ─────────────────────────────────────────
-   PROJECT FULL-PAGE OVERLAY (SVG 2 layout)
-───────────────────────────────────────── */
+/* ─── PROJECT OVERLAY ─── */
 .proj-overlay {
-  position: fixed;
-  inset: 0;
+  position: fixed; inset: 0;
   background: var(--cream);
   z-index: 800;
   overflow-y: auto;
@@ -469,24 +414,22 @@ footer {
   text-align: center;
   padding: 36px 24px 32px;
   border-bottom: 1px solid var(--border);
+  position: sticky; top: 0;
+  background: var(--cream);
+  z-index: 10;
 }
 .proj-page-logo a {
   text-decoration: none;
   font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--black);
-  cursor: pointer;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--black); cursor: pointer;
 }
-
 .proj-page-inner {
   max-width: 960px;
   margin: 0 auto;
   padding: 72px 64px 80px;
 }
-
 .proj-page-title {
   font-family: var(--av);
   font-size: clamp(36px, 5vw, 64px);
@@ -496,48 +439,49 @@ footer {
   color: var(--black);
   margin-bottom: 28px;
 }
-
 .proj-page-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 36px;
-  padding-bottom: 32px;
+  display: flex; flex-direction: column; gap: 6px;
+  margin-bottom: 36px; padding-bottom: 32px;
   border-bottom: 1px solid var(--border);
 }
-.proj-meta-row {
-  font-size: 14px;
-  color: var(--black);
-  line-height: 1.7;
-}
+.proj-meta-row { font-size: 14px; color: var(--black); line-height: 1.7; }
 .proj-meta-row strong { font-weight: 600; }
 .proj-meta-row a { color: var(--blue); text-decoration: none; }
 .proj-meta-row a:hover { text-decoration: underline; }
-
 .proj-page-desc {
   font-family: var(--av);
-  font-size: 16px;
-  line-height: 1.85;
-  color: #3A3A38;
-  margin-bottom: 52px;
+  font-size: 16px; line-height: 1.85;
+  color: #3A3A38; margin-bottom: 52px;
 }
 .proj-page-desc p { margin-bottom: 20px; }
 
+/* Gallery images */
+.proj-page-image-group { margin-bottom: 52px; }
 .proj-page-image {
   width: 100%;
-  margin-bottom: 4px;
   background: #E6E6E0;
   overflow: hidden;
+  margin-bottom: 4px;
 }
-.proj-page-image img {
-  width: 100%;
-  display: block;
-  height: auto;
+.proj-page-image img { width: 100%; display: block; height: auto; }
+
+/* ─── CAPTIONS ─── */
+.proj-caption {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 24px;
 }
-.proj-page-image + .proj-page-image { margin-top: 4px; }
+.proj-caption svg { flex-shrink: 0; margin-top: 4px; opacity: 0.6; }
+.proj-caption-text {
+  font-family: 'More Sugar', serif;
+  font-size: 18px;
+  color: var(--muted);
+  line-height: 1.3;
+}
 
-.proj-page-image-group { margin-bottom: 52px; }
-
+/* Testimonial */
 .proj-testimonial {
   background: white;
   border: 1px solid var(--border);
@@ -546,60 +490,36 @@ footer {
 }
 .proj-testimonial blockquote {
   font-family: var(--av);
-  font-size: 15px;
-  font-style: italic;
-  line-height: 1.8;
-  color: var(--black);
+  font-size: 15px; font-style: italic;
+  line-height: 1.8; color: var(--black);
   margin-bottom: 16px;
 }
 .proj-testimonial cite {
   font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--black);
-  font-style: normal;
-  display: block;
+  font-size: 13px; font-weight: 600;
+  color: var(--black); font-style: normal; display: block;
 }
 .proj-testimonial cite span {
-  display: block;
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--muted);
-  margin-top: 2px;
+  display: block; font-size: 12px;
+  font-weight: 400; color: var(--muted); margin-top: 2px;
 }
-
 .proj-page-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 32px; border-top: 1px solid var(--border);
 }
 .proj-nav-btn {
-  font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--black);
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0;
-  letter-spacing: 0.02em;
-  text-decoration: none;
+  font-family: var(--sans); font-size: 13px; font-weight: 600;
+  color: var(--black); background: none; border: none;
+  cursor: pointer; padding: 0; letter-spacing: 0.02em;
   transition: opacity 0.2s;
 }
 .proj-nav-btn:hover { opacity: 0.5; }
 
-/* ─────────────────────────────────────────
-   RESPONSIVE
-───────────────────────────────────────── */
+/* ─── RESPONSIVE ─── */
 @media (max-width: 800px) {
   .hero { padding: 56px 24px 48px; }
-  .works-section { padding: 56px 24px; }
-  .works-grid { grid-template-columns: 1fr; }
+  .works-section { padding: 48px 24px; }
+  .works-grid { grid-template-columns: 1fr; gap: 32px 0; }
   .cta-section { padding: 56px 24px; }
   footer { padding: 44px 24px 0; }
   .footer-links { gap: 28px; }
@@ -614,12 +534,10 @@ footer {
 </head>
 <body>
 
-<!-- ── LOGO ── -->
 <header class="site-logo">
-  <a href="logo.png" id="home-link">Mbithe Mutavi</a>
+  <a href="#" id="home-link">Mbithe Mutavi</a>
 </header>
 
-<!-- ── HERO ── -->
 <section class="hero">
   <h1 class="hero-headline">
     I help <em>impact</em> organisations<br>
@@ -628,21 +546,17 @@ footer {
   <p class="hero-sub">Design consultant &amp; visual storyteller based in Nairobi, working with NGOs, feminist organisations, and social enterprises.</p>
 </section>
 
-<!-- ── CLIENT LOGOS ── -->
 <div class="clients-bar">
-  <div class="clients-track" id="clients-track">
-    <!-- filled by JS -->
-  </div>
+  <div class="clients-track" id="clients-track"></div>
 </div>
 
-<!-- ── SNEAK PEEK ── -->
 <section class="peek-section">
   <div class="peek-header">
     <h2>Sneak peak of my works</h2>
+    <p>a scrolling bar — works that haven't been featured on my portfolio</p>
   </div>
   <div class="peek-scroll-wrap">
     <div class="peek-scroll-track" id="peek-track">
-      <!-- 10 placeholder slots — replace src with your images -->
       <div class="peek-card placeholder"></div>
       <div class="peek-card placeholder"></div>
       <div class="peek-card placeholder"></div>
@@ -651,7 +565,6 @@ footer {
       <div class="peek-card placeholder"></div>
       <div class="peek-card placeholder"></div>
       <div class="peek-card placeholder"></div>
-      <!-- duplicated for infinite loop -->
       <div class="peek-card placeholder"></div>
       <div class="peek-card placeholder"></div>
       <div class="peek-card placeholder"></div>
@@ -664,20 +577,17 @@ footer {
   </div>
 </section>
 
-<!-- ── SELECTED WORKS ── -->
 <section class="works-section" id="works">
   <span class="works-label">Select works</span>
   <div class="works-grid" id="works-grid"></div>
 </section>
 
-<!-- ── CONTACT CTA ── -->
 <section class="cta-section">
   <h2 class="cta-heading">Ready to build<br>something amazing?</h2>
   <p class="cta-sub">I'd love to connect with you!</p>
   <button class="btn-blue" id="open-contact">CONTACT ME</button>
 </section>
 
-<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-top">
     <p class="footer-tagline">Design that centres the mission. Based in Nairobi, working globally.</p>
@@ -695,7 +605,7 @@ footer {
       </div>
       <div class="footer-col">
         <span>Email</span>
-        <p>hello@mbithemutavi.com</p>
+        <p>design@mbithemutavi.com</p>
       </div>
     </div>
   </div>
@@ -704,7 +614,6 @@ footer {
   </div>
 </footer>
 
-<!-- ── CONTACT MODAL ── -->
 <div class="modal-overlay" id="contact-modal">
   <div class="modal-box">
     <button class="modal-close" id="modal-close">✕</button>
@@ -737,7 +646,6 @@ footer {
   </div>
 </div>
 
-<!-- ── PROJECT FULL-PAGE OVERLAY ── -->
 <div class="proj-overlay" id="proj-overlay">
   <div class="proj-page-logo">
     <a id="proj-back-logo">Mbithe Mutavi</a>
@@ -746,65 +654,14 @@ footer {
 </div>
 
 <script>
-// ---- PORTFOLIO DATA ----
-// Edit project copy, images, and meta here. Image paths are relative to /images/<project-slug>/
-
-  const capHTML = item.caption
-  ? `<div class="proj-caption">${ARROW_SVG}<span class="proj-caption-text">${item.caption}</span></div>`
-  : '';
-
+// ── PORTFOLIO DATA ──
 const CATEGORIES = [
-  {
-    slug: "social-impact",
-    icon: "blue",
-    title: "Social Impact &<br>Feminist Organisations",
-    short: "Brand, editorial, and campaign design for NGOs and feminist publications.",
-    eyebrow: "Social impact",
-    desc: "Brand identity, editorial design, and campaign visuals for organisations working on gender justice, reproductive rights, and civic education across Africa.",
-  },
-  {
-    slug: "childrens-books",
-    icon: "lime",
-    title: "Children's Books &<br>Illustration",
-    short: "Hand-drawn illustration and layout for young readers.",
-    eyebrow: "Illustration",
-    desc: "Character illustration and page layout for children's storytelling — building visual worlds that are warm, clear, and built to hold a child's attention.",
-  },
-  {
-    slug: "brand-business",
-    icon: "black",
-    title: "Brand &<br>Business Design",
-    short: "Identity systems and packaging for podcasts, cafés, and small businesses.",
-    eyebrow: "Brand design",
-    desc: "Logo, identity, and packaging design for independent brands, podcasts, and businesses building a presence from the ground up.",
-  },
-];
-
-const TESTIMONIALS = [
-  {
-    quote: "Thank you deeply for your incredible artistry, talent, and dedication in bringing the first issue of The FEMINIST magazine to life. We are truly grateful for your time, your patience, and for journeying alongside the FIK team over these past months. It has been an absolute pleasure working with you.",
-    author: "Elvine",
-    role: "Feminist Programs Lead, Feminists In Kenya",
-  },
-  {
-    quote: "Mbithe is a superstar! I have worked with her on a magazine, and her illustrations were incredible. I have also worked with her on a website revamp, and she was great! She delivers quality work, and her work ethic is top-notch. She will speak her mind, share her ideas, ask questions and deliver on time.",
-    author: "Naisula Sironka",
-    role: "Feminists In Kenya",
-  },
-  {
-    quote: "She has done a fantastic job. The pictograms look great.",
-    author: "Caroline",
-    role: "Education Plus Initiative, UNAIDS",
-  },
-  {
-    quote: "Thank you for the great work that you did — we showcased in Bogota.",
-    author: "Pansi Pam",
-    role: "Ipas",
-  },
+  { slug: "social-impact", title: "Social Impact & Feminist Organisations" },
+  { slug: "childrens-books", title: "Children's Books & Illustration" },
+  { slug: "brand-business", title: "Brand & Business Design" },
 ];
 
 const PROJECTS = [
-  // ---------------- SOCIAL IMPACT & FEMINIST ORGANISATIONS ----------------
   {
     slug: "feminist-in-kenya",
     category: "social-impact",
@@ -812,18 +669,9 @@ const PROJECTS = [
     tag: "Editorial + Illustration + Web",
     client: "Feminists in Kenya (FIK)",
     role: "Editorial design, illustration, visual identity, website design",
-    type: "Print, digital & web",
     cover: "Images/feminist-in-kenya/issue-01/psd-5.png",
-    desc: "For the launch of The FEMINIST Magazine, FIK's first quarterly publication, the brief wasn't just to design a magazine — it needed a visual language able to hold rage, joy, grief, resistance, and community all at once. Centred on the theme \"Resistance,\" the first issue explored how feminists in Kenya, across Africa, and globally challenge patriarchy, colonialism, capitalism, and violence through activism, art, care, and everyday acts of defiance.\n\nBefore developing the visual direction, I spent time understanding the wider political and emotional context — the magazine needed to feel unapologetically feminist, distinctly Afrocentric, and rooted in the realities of the communities it was speaking to. I looked at African protest art, feminist zines, murals, and activist posters rather than Western design references, and built the system around expressive illustration, layered compositions, strong typography, and flexible layouts. Rich earth tones, reds, oranges, greens, and black carried urgency and vitality, while textured illustration brought warmth. Protest scenes, gestures of defiance, and everyday moments of resistance became part of the visual language, not decoration on top of it.\n\nBecause the publication needed to live beyond print, many illustrations were later adapted for social media and the wider redesign of the FIK website — creating a thread between the magazine, the digital platform, and the organisation's ongoing campaigns and organising work. Between February and August 2025, the FIK platform recorded 2.8K views and 1.5K visitors, with traffic growth of more than 300%, reaching readers in Kenya, the US, Germany, Nigeria, France, the UK, South Africa, the Netherlands, and Canada.",
-    impact: [
-      "2.8K views and 1.5K visitors (Feb–Aug 2025)",
-      "Traffic growth of 300%+ over the period",
-      "Readers across 9 countries on 4 continents",
-    ],
-    testimonial: {
-      quote: "I have worked with her on a magazine, and her illustrations were incredible. I have also worked with her on a website revamp, and she was great! She delivers quality work, and her work ethic is top-notch.",
-      author: "Naisula Sironka",
-    },
+    desc: "For the launch of The FEMINIST Magazine, FIK's first quarterly publication, the brief wasn't just to design a magazine — it needed a visual language able to hold rage, joy, grief, resistance, and community all at once. Centred on the theme \"Resistance,\" the first issue explored how feminists in Kenya, across Africa, and globally challenge patriarchy, colonialism, capitalism, and violence through activism, art, care, and everyday acts of defiance.\n\nBefore developing the visual direction, I spent time understanding the wider political and emotional context — the magazine needed to feel unapologetically feminist, distinctly Afrocentric, and rooted in the realities of the communities it was speaking to.\n\nBetween February and August 2025, the FIK platform recorded 2.8K views and 1.5K visitors, with traffic growth of more than 300%, reaching readers in Kenya, the US, Germany, Nigeria, France, the UK, South Africa, the Netherlands, and Canada.",
+    testimonial: { quote: "I have worked with her on a magazine, and her illustrations were incredible. She delivers quality work, and her work ethic is top-notch.", author: "Naisula Sironka", role: "Feminists In Kenya" },
     gallery: [
       { type: "image", src: "Images/feminist-in-kenya/issue-02/feminist-futures-issue.png", caption: "Issue 02 — Feminist Futures, cover design" },
       { type: "image", src: "Images/feminist-in-kenya/issue-02/issue-22.jpg" },
@@ -831,8 +679,7 @@ const PROJECTS = [
       { type: "image", src: "Images/feminist-in-kenya/issue-02/issue-27.jpg" },
       { type: "image", src: "Images/feminist-in-kenya/issue-01/psd-1.png", caption: "Issue 01 spreads — Resistance" },
       { type: "image", src: "Images/feminist-in-kenya/issue-01/psd-3.png" },
-      { type: "image", desktop: "Images/feminist-in-kenya/issue-01/psd-3.png", caption: "FIK website — homepage" },
-      { type: "image", src: "Images/feminist-in-kenya/website/fik-website.png" },
+      { type: "image", src: "Images/feminist-in-kenya/website/fik-website.png", caption: "FIK website — homepage" },
     ],
   },
   {
@@ -842,13 +689,9 @@ const PROJECTS = [
     tag: "Editorial + Data Visualisation + Illustration",
     client: "Ipas Africa Alliance",
     role: "Editorial design, data visualisation, illustration, fact sheet design",
-    type: "Print & digital advocacy materials",
     cover: "Images/ipas/ipas-mockup.png",
-    desc: "Ipas had extensive research on the CTS Nexus — child marriage, teenage pregnancy, and school dropout — but needed a clearer way to communicate it across audiences. The brief called for two connected outputs: a concise 2-page document for donors and global stakeholders, and seven country-level fact sheets for use by country offices. The challenge was distilling complex, multi-country data into formats that were both easy to scan and compelling enough to drive action, while keeping everything visually consistent.\n\nI structured the content across two tiers — a master document synthesising the problem and Ipas' approach, and localised country fact sheets sharing one visual system — built on clean, grid-based layouts with strong hierarchy and intentional white space. Graphs, data callouts, and simplified visual flows made the self-reinforcing nature of the CTS Nexus immediately understandable, while editorial illustration grounded the data in lived realities — girls navigating structural barriers, support systems, and pathways to change — adding emotional clarity without overwhelming the content. Clear calls to action were embedded throughout so the documents didn't just inform, but guided next steps for donors and program teams.\n\nThe final materials were showcased internationally, including at a conference in Bogotá, extending their reach well beyond the original brief.",
-    testimonial: {
-      quote: "Thank you for the great work that you did — we showcased in Bogota.",
-      author: "Pansi Pam, Ipas",
-    },
+    desc: "Ipas had extensive research on the CTS Nexus — child marriage, teenage pregnancy, and school dropout — but needed a clearer way to communicate it across audiences. The brief called for two connected outputs: a concise 2-page document for donors and global stakeholders, and seven country-level fact sheets for use by country offices.\n\nThe final materials were showcased internationally, including at a conference in Bogotá, extending their reach well beyond the original brief.",
+    testimonial: { quote: "Thank you for the great work that you did — we showcased in Bogota.", author: "Pansi Pam", role: "Ipas" },
     gallery: [
       { type: "image", src: "Images/ipas/ipas-mockup.png" },
       { type: "image", src: "Images/ipas/child-marriage.png" },
@@ -863,13 +706,9 @@ const PROJECTS = [
     tag: "Visual Design + Illustration + Information Design",
     client: "UNAIDS",
     role: "Editorial illustration, campaign materials, factsheet & data visualisation design",
-    type: "Print, digital & video",
     cover: "Images/unaids/zambia-factsheet-pdf.png",
-    desc: "Work with UNAIDS on the Education Plus Initiative, a multi-agency effort to improve outcomes for adolescent girls and young women across sub-Saharan Africa by addressing the intersection of education, gender inequality, and HIV risk. My role spanned editorial illustrations for newsletters, flyer and campaign materials, country factsheet design, and illustration assets for a video project — translating complex, sensitive data into visuals that stayed clear, engaging, and culturally grounded.\n\nThe Zambia factsheet needed to present dense statistical data simply, balance credibility with visual warmth, and use pictograms and illustration to improve comprehension for donors, policymakers, and the public alike. I approached it as a system rather than a one-off layout: a consistent pictogram language to humanise statistics, colour-coded narratives keeping each theme — education, HIV prevalence, policy — distinct but cohesive, and a structured hierarchy that let readers scan while still following the full story.\n\nThe illustrations were later adapted into a video for the initiative, extending the visual language across mediums and contributing to advocacy materials used across multiple countries.",
-    testimonial: {
-      quote: "She has done a fantastic job. The pictograms look great.",
-      author: "Caroline, Education Plus Initiative",
-    },
+    desc: "Work with UNAIDS on the Education Plus Initiative, a multi-agency effort to improve outcomes for adolescent girls and young women across sub-Saharan Africa. My role spanned editorial illustrations for newsletters, flyer and campaign materials, country factsheet design, and illustration assets for a video project.\n\nThe Zambia factsheet needed to present dense statistical data simply, balance credibility with visual warmth, and use pictograms and illustration to improve comprehension for donors, policymakers, and the public alike.",
+    testimonial: { quote: "She has done a fantastic job. The pictograms look great.", author: "Caroline", role: "Education Plus Initiative, UNAIDS" },
     gallery: [
       { type: "image", src: "Images/unaids/zambia-factsheet-pdf.png" },
       { type: "image", src: "Images/unaids/35e056157531291-637cbb92b722b.png" },
@@ -885,9 +724,8 @@ const PROJECTS = [
     tag: "Editorial + Illustration + Advocacy",
     client: "Akina Mama wa Afrika",
     role: "Illustration, cover & report design, campaign visuals",
-    type: "Print, digital report & social",
     cover: "Images/akina-mama/feminist-approaches-to-abortion-rights-in-uganda.png",
-    desc: "Illustration and design for a policy brief book cover for Akina Mama wa Afrika, a pan-African feminist organisation working on gender justice and feminist advocacy, alongside supporting campaign visuals and social media assets communicating gender justice and policy themes. The brief required balancing expressive illustration with structured layout so dense policy content stayed accessible — communicating complex themes clearly, feeling rooted in African feminist perspectives, and working across both print and digital formats.\n\nThe visual materials went on to support Akina Mama wa Afrika's advocacy work across the continent, helping communicate gender justice themes through design that stayed culturally grounded rather than generic.",
+    desc: "Illustration and design for a policy brief book cover for Akina Mama wa Afrika, a pan-African feminist organisation working on gender justice and feminist advocacy, alongside supporting campaign visuals and social media assets.\n\nThe visual materials went on to support Akina Mama wa Afrika's advocacy work across the continent, helping communicate gender justice themes through design that stayed culturally grounded rather than generic.",
     gallery: [
       { type: "image", src: "Images/akina-mama/feminist-approaches-to-abortion-rights-in-uganda.png" },
     ],
@@ -899,21 +737,10 @@ const PROJECTS = [
     tag: "Web Design + WordPress + SEO",
     client: "Let Girls Learn Kenya (LGLI)",
     role: "Website design, WordPress development, hosting setup, SEO foundations",
-    type: "Website",
     cover: "Images/lgli/screencapture-letgirlslearnke-org-2026-04-10-10-00-26.png",
-    desc: "Let Girls Learn Kenya needed a website that better reflected the scale, impact, and credibility of its work. The previous site was heavily text-based, visually overwhelming, and difficult to navigate, which made it harder for visitors to quickly understand the organisation's programmes, advocacy, and achievements. Important information was buried in crowded layouts that lacked the structure to guide visitors through.\n\nI led the redesign from strategy through implementation — website design and layout restructuring, WordPress development, hosting setup and backend configuration, SEO foundations, and documentation for future content management. The redesign focused on readability, navigation, and content structure: more white space, stronger visual hierarchy, and clearer pathways between sections, with large blocks of copy broken into smaller, more digestible sections using headings, imagery, cards, and spacing. The site was built in WordPress to give the team flexibility to update and publish independently, with SEO foundations built in to improve discoverability.",
-    impact: [
-      "2.96K impressions and 51 clicks through search over six months",
-      "Average search position of 5",
-      "Homepage drove the majority of traffic — 2,919 impressions, 51 clicks",
-    ],
+    desc: "Let Girls Learn Kenya needed a website that better reflected the scale, impact, and credibility of its work. I led the redesign from strategy through implementation — website design and layout restructuring, WordPress development, hosting setup and backend configuration, SEO foundations, and documentation for future content management.\n\n2.96K impressions and 51 clicks through search over six months, with an average search position of 5.",
     gallery: [
-      {
-        type: "mockup-row",
-        desktop: "Images/lgli/screencapture-letgirlslearnke-org-2026-04-10-10-00-26.png",
-        mobile: "Images/lgli/letgirlslearnke-org-mobile.png",
-        caption: "Homepage — desktop & mobile",
-      },
+      { type: "image", src: "Images/lgli/screencapture-letgirlslearnke-org-2026-04-10-10-00-26.png", caption: "Homepage" },
       { type: "image", src: "Images/lgli/screencapture-letgirlslearnke-org-about-us-2026-04-10-10-01-15.png", caption: "About page" },
       { type: "image", src: "Images/lgli/screencapture-letgirlslearnke-org-advocacy-2026-04-10-10-01-29.png", caption: "Advocacy page" },
     ],
@@ -925,7 +752,6 @@ const PROJECTS = [
     tag: "Illustration + Layout",
     client: "The 50 Percent",
     role: "Illustration, digital book layout",
-    type: "Digital publication",
     cover: "Images/the-50-percent/1.png",
     desc: "Illustration and full digital layout for The 50 Percent's young people's guide — designed to make complex, sometimes difficult topics approachable for a younger readership through warm illustration and a page rhythm built for screen reading.",
     gallery: [
@@ -942,20 +768,17 @@ const PROJECTS = [
     slug: "debunk-media",
     category: "social-impact",
     title: "Debunk Media — Website Redesign",
-    tag: "UX/UI Design · WAN-IFRA Nominee, Silver Award Winner",
+    tag: "UX/UI Design · WAN-IFRA Silver Award",
     client: "Debunk Media",
-    role: "UX/UI design — look, feel, and editorial structure of the new Debunk Media",
-    type: "Website (WordPress / Elementor)",
+    role: "UX/UI design — look, feel, and editorial structure",
     cover: "Images/debunk-media/debunk-media-website.png",
-    desc: "A comprehensive redesign of Debunk Media's digital news website, briefed to define the UX, UI, and overall look and feel of the new platform. Beyond functioning as a daily news source, the site also serves as a public editorial archive used by readers, researchers, and other media houses as a reference point for past reporting — so the relaunch had to support both immediate news consumption and long-term access to journalism.\n\nThe previous site reflected challenges common to many digital news platforms: dense layouts, inconsistent visual hierarchy, and an experience built for publishing rather than reading. As audiences shifted toward mobile and social consumption, the site struggled to hold attention or communicate story importance clearly. Its role as a public archive was also under-supported — archived stories were hard to locate, follow, or connect, which limited their value for historical reference and media research.\n\nThe relaunch unified editorial structure, user experience, and newsroom workflow into a single, scalable system. A clear hierarchy now guides readers through headlines, summaries, body content, and contextual links, with content organised into categories — People, Politics, Pop Culture, Public Square, Women, and Debunked — using modular layouts that make complex stories easier to digest. Simplified navigation, structured tagging, and clear categorisation let readers move seamlessly between current reporting and the archive, turning the site into both a working newsroom and a navigable public record.\n\nThe project began with wireframing and prototyping in Figma to define editorial hierarchy, user flows, and archive pathways before development, informing a smooth transition into build on WordPress with Elementor, using custom containers for each editorial section. An internal development team implemented custom code enhancements for performance and editorial flexibility. The redesign, \"Beyond the Headline,\" was nominated for and went on to win a WAN-IFRA Silver Award.",
+    desc: "A comprehensive redesign of Debunk Media's digital news website. Beyond functioning as a daily news source, the site serves as a public editorial archive used by readers, researchers, and other media houses — so the relaunch had to support both immediate news consumption and long-term access to journalism.\n\nThe redesign unified editorial structure, user experience, and newsroom workflow into a single, scalable system. The project began with wireframing and prototyping in Figma before development on WordPress with Elementor.\n\nThe redesign, \"Beyond the Headline,\" was nominated for and went on to win a WAN-IFRA Silver Award.",
     gallery: [
       { type: "image", src: "Images/debunk-media/debunk-media-website.png", caption: "Final homepage design" },
       { type: "image", src: "Images/debunk-media/screencapture-debunk-media-archive-2026-04-10-10-03-45.png", caption: "Article archive" },
       { type: "image", src: "Images/debunk-media/figma-wireframe.png", caption: "Early wireframing — process" },
     ],
   },
-
-  // ---------------- CHILDREN'S BOOKS & ILLUSTRATION ----------------
   {
     slug: "arthur-goes-potty",
     category: "childrens-books",
@@ -963,7 +786,6 @@ const PROJECTS = [
     tag: "Illustration",
     client: "Children's book project",
     role: "Character illustration, page art",
-    type: "Print / digital children's book",
     cover: "Images/arthur-goes-potty/front-page.png",
     desc: "Full character illustration for a children's book built around a milestone every toddler faces — potty training. The brief called for art that's warm and funny without being twee, with a character expressive enough to carry an early reader through a story largely told in pictures.",
     gallery: [
@@ -973,8 +795,6 @@ const PROJECTS = [
       { type: "image", src: "Images/arthur-goes-potty/10.png" },
     ],
   },
-
-  // ---------------- BRAND & BUSINESS DESIGN ----------------
   {
     slug: "digital-dada",
     category: "brand-business",
@@ -982,16 +802,11 @@ const PROJECTS = [
     tag: "Web Design",
     client: "Digital Dada",
     role: "Web design (desktop + mobile)",
-    type: "Website",
     cover: "Images/digital-dada/digitaldada-website.png",
     desc: "Website design for Digital Dada, built with a layout that holds up cleanly across screen sizes — from a full desktop browsing experience down to a mobile view designed for on-the-go listeners and visitors.",
     gallery: [
-      {
-        type: "mockup-row",
-        desktop: "Images/digital-dada/digitaldada-website.png",
-        mobile: "Images/digital-dada/digital-dada-website-mobile.png",
-        caption: "Homepage — desktop & mobile",
-      },
+      { type: "image", src: "Images/digital-dada/digitaldada-website.png", caption: "Desktop view" },
+      { type: "image", src: "Images/digital-dada/digital-dada-website-mobile.png", caption: "Mobile view" },
     ],
   },
   {
@@ -1001,7 +816,6 @@ const PROJECTS = [
     tag: "Brand Identity",
     client: "Data and Potatoes",
     role: "Brand identity, social templates",
-    type: "Brand identity",
     cover: "Images/data-and-potatoes/artboard-1.jpg",
     desc: "Brand identity for the Data and Potatoes podcast — a visual language playful enough to match the show's tone while staying flexible across episode art, social templates, and promotional assets.",
     gallery: [
@@ -1019,7 +833,6 @@ const PROJECTS = [
     tag: "Brand Identity",
     client: "Sweeven Café",
     role: "Logo design, brand identity",
-    type: "Brand identity",
     cover: "Images/sweeven/sweeven.png",
     desc: "Logo and brand identity for Sweeven Café, designed to feel warm and inviting in a physical space while translating cleanly onto packaging, signage, and social media.",
     gallery: [
@@ -1037,7 +850,6 @@ const PROJECTS = [
     tag: "Brand Identity",
     client: "So This Is Love",
     role: "Brand identity, episode art system",
-    type: "Brand identity",
     cover: "Images/so-this-is-love/artboard-2-copy.png",
     desc: "Brand identity for the So This Is Love podcast — an identity system built around an intimate, conversational tone, with a flexible art direction that holds up across episode covers and promotional content.",
     gallery: [
@@ -1053,7 +865,6 @@ const PROJECTS = [
     tag: "Packaging Design",
     client: "Tricia's Naturals",
     role: "Product packaging design",
-    type: "Packaging",
     cover: "Images/tricias-naturals/image.png",
     desc: "Product packaging design for Tricia's Naturals' natural hair care line, built to stand out on shelf while communicating the brand's natural, locally-rooted positioning at a glance.",
     gallery: [
@@ -1066,30 +877,33 @@ const PROJECTS = [
   },
 ];
 
-</script>
-<script>
 // ── CLIENT LOGOS ──
 const CLIENTS = [
-  { name: 'Heinrich Böll Stiftung', src: 'client-logos/heinrich-boll-stiftung.webp' },
-  { name: 'UNAIDS', src: 'client-logos/unaids.png' },
-  { name: 'Ipas', src: 'client-logos/ipas.png' },
-  { name: 'The 50 Percent', src: 'client-logos/the-50-percent.png' },
-  { name: 'MMTD', src: 'client-logos/mmtd.png' },
-  { name: 'Feminists in Kenya', src: 'client-logos/feminists-in-kenya.png' },
-  { name: 'Let Girls Learn Initiative', src: 'client-logos/let-girls-learn-initiative.png' },
-  { name: 'Digital Dada', src: 'client-logos/digital-dada.png' },
+  { name: 'Heinrich Böll Stiftung', src: 'client-logos/heinrich-boll-stiftung.png' },
+  { name: 'UNAIDS',                 src: 'client-logos/unaids.png' },
+  { name: 'Ipas',                   src: 'client-logos/ipas.png' },
+  { name: 'The 50 Percent',         src: 'client-logos/the-50-percent.png' },
+  { name: 'MMTD',                   src: 'client-logos/mmtd.png' },
+  { name: 'Feminists in Kenya',     src: 'client-logos/feminists-in-kenya.png' },
+  { name: 'Let Girls Learn',        src: 'client-logos/let-girls-learn-initiative.png' },
+  { name: 'Digital Dada',           src: 'client-logos/digital-dada.png' },
 ];
 
+// ── HAND-DRAWN ARROW SVG ──
+const ARROW = `<svg width="34" height="24" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1 5 C3.5 1.5 9 0 13.5 2.5 C18 5 20 11 23 14 C26 17 30 16 32.5 13.5" stroke="#0A0A0A" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+  <path d="M28.5 10.5 C30 12 32 13 32.5 13.5 C31 14 29.5 15.5 29 18" stroke="#0A0A0A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>`;
+
+// ── BUILD CLIENT BAR ──
 function buildClientBar() {
   const track = document.getElementById('clients-track');
-  // duplicate for seamless loop
-  const html = [...CLIENTS, ...CLIENTS].map(c =>
+  track.innerHTML = [...CLIENTS, ...CLIENTS].map(c =>
     `<div class="client-logo-item"><img src="${c.src}" alt="${c.name}" loading="lazy"></div>`
   ).join('');
-  track.innerHTML = html;
 }
 
-// ── WORKS GRID ──
+// ── BUILD WORKS GRID ──
 function buildWorksGrid() {
   const grid = document.getElementById('works-grid');
   grid.innerHTML = PROJECTS.map(p => `
@@ -1108,41 +922,39 @@ function buildWorksGrid() {
   );
 }
 
-// ── PROJECT PAGE ──
-const projOverlay = document.getElementById('proj-overlay');
-const projInner = document.getElementById('proj-page-inner');
-let currentSlug = null;
-
+// ── GALLERY WITH CAPTIONS ──
 function galleryHTML(items) {
   return '<div class="proj-page-image-group">' +
     items.map(item => {
+      let img = '';
       if (item.type === 'image') {
-        return `<div class="proj-page-image" style="margin-bottom:4px"><img src="${item.src}" alt=""></div>`;
+        img = `<div class="proj-page-image"><img src="${item.src}" alt="${item.caption || ''}"></div>`;
+      } else if (item.type === 'mockup' || item.type === 'mockup-row') {
+        img = `<div class="proj-page-image"><img src="${item.desktop}" alt="${item.caption || ''}"></div>`;
       }
-      if (item.type === 'mockup') {
-        return `<div class="proj-page-image" style="margin-bottom:4px"><img src="${item.desktop}" alt=""></div>`;
-      }
-      if (item.type === 'mockup-row') {
-        return `<div class="proj-page-image" style="margin-bottom:4px"><img src="${item.desktop}" alt=""></div>`;
-      }
-      return '';
-    }).join('') + '</div>';
+      const cap = item.caption
+        ? `<div class="proj-caption">${ARROW}<span class="proj-caption-text">${item.caption}</span></div>`
+        : '';
+      return img + cap;
+    }).join('') +
+  '</div>';
 }
+
+// ── PROJECT OVERLAY ──
+const projOverlay = document.getElementById('proj-overlay');
+const projInner   = document.getElementById('proj-page-inner');
 
 function openProject(slug) {
   const p = PROJECTS.find(x => x.slug === slug);
   if (!p) return;
-  currentSlug = slug;
-
-  const idx = PROJECTS.indexOf(p);
+  const idx  = PROJECTS.indexOf(p);
   const next = PROJECTS[(idx + 1) % PROJECTS.length];
-  const prev = PROJECTS[(idx - 1 + PROJECTS.length) % PROJECTS.length];
 
   const desc = p.desc.split(/\n\n/).map(par => `<p>${par}</p>`).join('');
-  const testimonial = p.testimonial ? `
+  const testi = p.testimonial ? `
     <div class="proj-testimonial">
       <blockquote>"${p.testimonial.quote}"</blockquote>
-      <cite>${p.testimonial.author}<span>${p.testimonial.role||''}</span></cite>
+      <cite>${p.testimonial.author}<span>${p.testimonial.role || ''}</span></cite>
     </div>` : '';
 
   projInner.innerHTML = `
@@ -1150,11 +962,12 @@ function openProject(slug) {
     <div class="proj-page-meta">
       <div class="proj-meta-row"><strong>Client</strong> : ${p.client}</div>
       <div class="proj-meta-row"><strong>Category</strong> : ${p.tag}</div>
-      ${p.url ? `<div class="proj-meta-row"><strong>Live project link</strong> : <a href="${p.url}" target="_blank">${p.url}</a></div>` : ''}
+      <div class="proj-meta-row"><strong>Role</strong> : ${p.role}</div>
+      ${p.url ? `<div class="proj-meta-row"><strong>Live project</strong> : <a href="${p.url}" target="_blank">${p.url}</a></div>` : ''}
     </div>
     <div class="proj-page-desc">${desc}</div>
     ${galleryHTML(p.gallery)}
-    ${testimonial}
+    ${testi}
     <nav class="proj-page-nav">
       <button class="proj-nav-btn" id="proj-back">← Back to all works</button>
       <button class="proj-nav-btn" id="proj-next">Next project →</button>
@@ -1179,38 +992,26 @@ document.getElementById('home-link').addEventListener('click', e => { e.preventD
 
 // ── CONTACT MODAL ──
 const contactModal = document.getElementById('contact-modal');
+function openModal()  { contactModal.classList.add('open');    document.body.style.overflow = 'hidden'; }
+function closeModal() { contactModal.classList.remove('open'); document.body.style.overflow = ''; }
 
-function openModal() {
-  contactModal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeModal() {
-  contactModal.classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-['open-contact', 'footer-contact'].forEach(id => {
+['open-contact','footer-contact'].forEach(id => {
   const el = document.getElementById(id);
   if (el) el.addEventListener('click', e => { e.preventDefault(); openModal(); });
 });
 document.getElementById('modal-close').addEventListener('click', closeModal);
 contactModal.addEventListener('click', e => { if (e.target === contactModal) closeModal(); });
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeModal(); closeProject(); }
-});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeProject(); } });
 
 // ── FORM ──
-const form = document.getElementById('contact-form');
-const submitBtn = document.getElementById('submit-btn');
+const form       = document.getElementById('contact-form');
+const submitBtn  = document.getElementById('submit-btn');
 const formSuccess = document.getElementById('form-success');
 form.addEventListener('submit', async e => {
   e.preventDefault();
   submitBtn.textContent = 'Sending…'; submitBtn.disabled = true;
   try {
-    const res = await fetch(form.action, {
-      method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' }
-    });
+    const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
     if (res.ok) { submitBtn.style.display = 'none'; formSuccess.style.display = 'block'; form.reset(); }
     else { submitBtn.textContent = 'Something went wrong'; submitBtn.disabled = false; }
   } catch { submitBtn.textContent = 'Network error — try again'; submitBtn.disabled = false; }

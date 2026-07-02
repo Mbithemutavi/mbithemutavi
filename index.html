@@ -78,7 +78,9 @@ body {
   max-width: 860px;
 }
 .hero-headline em {
-  font-style: italic;
+  font-family: 'More Sugar';
+  src: url('fonts/more-sugar-regular.ttf') format('truetype');
+  font-style: normal;
   font-weight: 400;
 }
 .hero-sub {
@@ -201,7 +203,7 @@ body {
    SELECTED WORKS
 ───────────────────────────────────────── */
 .works-section {
-  padding: 80px 64px;
+  padding: 64px 80px 80px;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -217,12 +219,12 @@ body {
 .works-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 40px 32px;
 }
 .proj-card {
   cursor: pointer;
   overflow: hidden;
-  background: #E6E6E0;
+  background: transparent;
   position: relative;
 }
 .proj-thumb {
@@ -242,7 +244,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 14px 0 4px;
+  padding: 12px 0 0;
 }
 .proj-name {
   font-family: var(--sans);
@@ -255,6 +257,11 @@ body {
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+.proj-caption-text {
+  font-family: 'More Sugar', serif;
+  font-size: 17px;
+  color: var(--muted);
 }
 
 /* ─────────────────────────────────────────
@@ -741,6 +748,10 @@ footer {
 <script>
 // ---- PORTFOLIO DATA ----
 // Edit project copy, images, and meta here. Image paths are relative to /images/<project-slug>/
+
+  const capHTML = item.caption
+  ? `<div class="proj-caption">${ARROW_SVG}<span class="proj-caption-text">${item.caption}</span></div>`
+  : '';
 
 const CATEGORIES = [
   {

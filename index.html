@@ -78,9 +78,7 @@ body {
   max-width: 860px;
 }
 .hero-headline em {
-   font-family: 'More Sugar';
-  src: url('more-sugar.regular.ttf') format('truetype');
-  font-style: ;
+   font-family: 'More Sugar'; src: url('more-sugar.regular.ttf') format('truetype');
   font-weight: 400;
 }
 .hero-sub {
@@ -160,7 +158,7 @@ body {
 .peek-scroll-wrap { overflow: hidden; }
 .peek-scroll-track {
   display: flex;
-  gap: 0;
+  gap: 20;
   animation: scroll-peek 40s linear infinite;
   width: max-content;
 }
@@ -190,13 +188,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.peek-card.placeholder::after {
-  content: 'Image coming soon';
-  font-size: 11px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 /* ─────────────────────────────────────────
@@ -634,7 +625,7 @@ footer {
 <section class="peek-section">
   <div class="peek-header">
     <h2>Sneak peak of my works</h2>
-    <p>a scrolling bar — works that haven't been featured on my portfolio</p>
+    <p></p>
   </div>
   <div class="peek-scroll-wrap">
     <div class="peek-scroll-track" id="peek-track">

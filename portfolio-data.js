@@ -1,32 +1,4 @@
-// ---- PORTFOLIO DATA ----
-// Edit project copy, images, and meta here. Image paths are relative to /images/<project-slug>/
 
-const CATEGORIES = [
-  {
-    slug: "social-impact",
-    icon: "blue",
-    title: "Social Impact &<br>Feminist Organisations",
-    short: "Brand, editorial, and campaign design for NGOs and feminist publications.",
-    eyebrow: "Social impact",
-    desc: "Brand identity, editorial design, and campaign visuals for organisations working on gender justice, reproductive rights, and civic education across Africa.",
-  },
-  {
-    slug: "childrens-books",
-    icon: "lime",
-    title: "Children's Books &<br>Illustration",
-    short: "Hand-drawn illustration and layout for young readers.",
-    eyebrow: "Illustration",
-    desc: "Character illustration and page layout for children's storytelling — building visual worlds that are warm, clear, and built to hold a child's attention.",
-  },
-  {
-    slug: "brand-business",
-    icon: "black",
-    title: "Brand &<br>Business Design",
-    short: "Identity systems and packaging for podcasts, cafés, and small businesses.",
-    eyebrow: "Brand design",
-    desc: "Logo, identity, and packaging design for independent brands, podcasts, and businesses building a presence from the ground up.",
-  },
-];
 
 const PROJECTS = [
   // ---------------- SOCIAL IMPACT & FEMINIST ORGANISATIONS ----------------
@@ -234,6 +206,24 @@ const PROJECTS = [
     ],
   },
   {
+    slug: "Stelim-Africa",
+    category: "brand-business",
+    title: "Stelim Africa — Brand Identity",
+    tag: "Brand Identity",
+    client: "Stelim Africa",
+    role: "Logo design, brand identity",
+    type: "Brand identity",
+    cover: "images/stelim-africa/stelim-africa.png",
+    desc: "Logo and brand identity for Stelim Africa, designed to feel warm and inviting in a physical space while translating cleanly onto packaging, signage, and social media.",
+    gallery: [
+      { type: "image", src: "images/stelim-africa/stelim-africa-logo.png", caption: "Primary logo" },
+      { type: "image", src: "images/stelim-africa/stelim-africa.png" },
+      { type: "image", src: "images/stelim-africa/artboard-1.png" },
+      { type: "image", src: "images/stelim-africa/artboard-2.png" },
+      { type: "image", src: "images/stelim-africa/artboard-3.png" },
+    ],
+  },
+  {
     slug: "so-this-is-love",
     category: "brand-business",
     title: "So This Is Love — Podcast Brand Identity",
@@ -249,7 +239,7 @@ const PROJECTS = [
       { type: "image", src: "images/so-this-is-love/artboard-4-copy.png" },
     ],
   },
-  {
+  { 
     slug: "tricias-naturals",
     category: "brand-business",
     title: "Tricia's Naturals — Product Packaging",

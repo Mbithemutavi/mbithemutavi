@@ -126,65 +126,6 @@ body {
   filter: grayscale(0%) opacity(1);
 }
 
-/* ─── SNEAK PEEK ─── */
-.peek-section { padding-top: 64px; }
-.peek-header {
-  padding: 0 64px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.peek-header h2 {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--black);
-}
-.peek-header p {
-  font-size: 13px;
-  color: var(--muted);
-  font-style: italic;
-}
-.peek-scroll-wrap { overflow: hidden; }
-.peek-scroll-track {
-  display: flex;
-  animation: scroll-peek 40s linear infinite;
-  width: max-content;
-}
-.peek-scroll-track:hover { animation-play-state: paused; }
-@keyframes scroll-peek {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-.peek-card {
-  width: 320px;
-  aspect-ratio: 4/3;
-  flex-shrink: 0;
-  background: #E2E2DC;
-  overflow: hidden;
-  border-right: 1px solid var(--border);
-}
-.peek-card img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
-}
-.peek-card:hover img { transform: scale(1.05); }
-.peek-card.placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.peek-card.placeholder::after {
-  content: 'Image coming soon';
-  font-size: 11px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
 /* ─── SELECTED WORKS ─── */
 .works-section {
   padding: 64px 80px 80px;
@@ -536,7 +477,7 @@ footer {
 <body>
 
 <header class="site-logo">
-  <a href="#" id="home-link">Mbithe Mutavi</a>
+  <a href="logo.png" id="home-link">Mbithe Mutavi</a>
 </header>
 
 <section class="hero">
@@ -739,7 +680,6 @@ const PROJECTS = [
       { type: "image", src: "Images/the-50-percent/6.png" },
       { type: "image", src: "Images/the-50-percent/7.png" },
     ],
-  },
   },
   {
     slug: "arthur-goes-potty",

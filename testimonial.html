@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Share your experience — Mbithe Mutavi</title>
+<meta name="description" content="Share your experience working with Mbithe Mutavi.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+@font-face {
+  font-family: 'More Sugar';
+  src: url('more-sugar-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:  #FFFFF8;
+  --blue:   #0522FF;
+  --lime:   #AAFF0C;
+  --black:  #0A0A0A;
+  --muted:  #888882;
+  --border: rgba(10,10,10,0.09);
+  --sans:   'Inter', sans-serif;
+  --ms:     'More Sugar', serif;
+}
+
+html, body {
+  min-height: 100vh;
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 80vw 80vw at 110% -10%, rgba(5,34,255,0.09) 0%, transparent 60%),
+    radial-gradient(ellipse 40vw 40vw at 95% 8%, rgba(170,255,12,0.13) 0%, transparent 55%),
+    radial-gradient(ellipse 70vw 70vw at -15% 95%, rgba(5,34,255,0.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ─── HEADER ─── */
+.site-logo {
+  text-align: center;
+  padding: 32px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.site-logo a {
+  text-decoration: none;
+  display: inline-block;
+}
+.site-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+/* ─── MAIN ─── */
+.page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 72px 32px 80px;
+}
+
+.page-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.page-title {
+  font-family: var(--ms);
+  font-size: clamp(40px, 7vw, 72px);
+  line-height: 1.0;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.page-sub {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-bottom: 52px;
+  max-width: 460px;
+}
+
+/* ─── FORM ─── */
+.testi-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.field .hint {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: -3px;
+}
+
+.field input,
+.field textarea,
+.field select {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--black);
+  background: rgba(255,255,248,0.8);
+  border: 1.5px solid var(--border);
+  padding: 14px 16px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s, background 0.2s;
+  appearance: none;
+  border-radius: 0;
+  line-height: 1.5;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color: var(--blue);
+  background: white;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--muted);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+/* Star rating */
+.rating-row {
+  display: flex;
+  gap: 8px;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.rating-row input { display: none; }
+.rating-row label {
+  font-size: 32px;
+  color: #D8D8D2;
+  cursor: pointer;
+  transition: color 0.15s;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  line-height: 1;
+}
+.rating-row input:checked ~ label,
+.rating-row label:hover,
+.rating-row label:hover ~ label {
+  color: var(--blue);
+}
+
+/* Permission toggle */
+.permission-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  background: rgba(5,34,255,0.04);
+  border: 1px solid rgba(5,34,255,0.12);
+  cursor: pointer;
+}
+.permission-row input[type="checkbox"] {
+  width: 18px; height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+.permission-row .perm-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--black);
+}
+.permission-row .perm-text strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+/* Submit */
+.submit-btn {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--blue);
+  border: none;
+  padding: 18px 40px;
+  align-self: flex-start;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+.submit-btn:hover { background: var(--black); }
+.submit-btn:disabled { opacity: 0.5; cursor: default; }
+
+/* Success state */
+.success-screen {
+  display: none;
+  text-align: center;
+  padding: 80px 0;
+}
+.success-icon {
+  font-size: 48px;
+  margin-bottom: 24px;
+  display: block;
+}
+.success-title {
+  font-family: var(--ms);
+  font-size: clamp(36px, 6vw, 56px);
+  color: var(--black);
+  margin-bottom: 16px;
+  line-height: 1.05;
+}
+.success-sub {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+/* ─── FOOTER ─── */
+.page-footer {
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+}
+.page-footer a {
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 600px) {
+  .page { padding: 48px 24px 64px; }
+  .page-title { font-size: 48px; }
+  .submit-btn { width: 100%; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-logo">
+  <a href="https://mbithemutavi.com">
+    <img src="logo.png" alt="Mbithe Mutavi" class="site-logo-img">
+  </a>
+</header>
+
+<main class="page">
+
+  <!-- FORM VIEW -->
+  <div id="form-view">
+    <span class="page-eyebrow">Testimonial</span>
+    <h1 class="page-title">It was a pleasure working with you.</h1>
+    <p class="page-sub">If you have a moment, I'd love to hear what it was like working together. It helps other organisations find me — and it means a lot.</p>
+
+    <form class="testi-form" id="testi-form" action="https://formspree.io/f/xqegqewd" method="POST">
+
+      <div class="field">
+        <label for="t-name">Your name</label>
+        <input type="text" id="t-name" name="name" placeholder="e.g. Naisula Sironka" required>
+      </div>
+
+      <div class="field">
+        <label for="t-role">Your role &amp; organisation</label>
+        <input type="text" id="t-role" name="role" placeholder="e.g. Programs Lead, Feminists In Kenya" required>
+      </div>
+
+      <div class="field">
+        <label for="t-project">Project we worked on</label>
+        <input type="text" id="t-project" name="project" placeholder="e.g. FIK Magazine Issue 01">
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field">
+        <label>How would you rate working with me?</label>
+        <div class="rating-row">
+          <input type="radio" name="rating" id="star5" value="5">
+          <label for="star5" title="5 stars">★</label>
+          <input type="radio" name="rating" id="star4" value="4">
+          <label for="star4" title="4 stars">★</label>
+          <input type="radio" name="rating" id="star3" value="3">
+          <label for="star3" title="3 stars">★</label>
+          <input type="radio" name="rating" id="star2" value="2">
+          <label for="star2" title="2 stars">★</label>
+          <input type="radio" name="rating" id="star1" value="1">
+          <label for="star1" title="1 star">★</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="t-quote">In your own words</label>
+        <p class="hint">What was it like working together? What would you tell someone considering working with me?</p>
+        <textarea id="t-quote" name="testimonial" placeholder="Share your honest experience..." required></textarea>
+      </div>
+
+      <div class="divider"></div>
+
+      <label class="permission-row">
+        <input type="checkbox" name="permission" value="yes" id="t-permission">
+        <span class="perm-text">
+          <strong>Permission to feature on my portfolio</strong>
+          I'd love to share your words on my website and social media. Tick this if you're happy for me to use your testimonial with your name and organisation.
+        </span>
+      </label>
+
+      <!-- Honeypot -->
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_subject" value="New testimonial from mbithemutavi.com">
+
+      <button type="submit" class="submit-btn" id="testi-submit">Send my testimonial →</button>
+
+    </form>
+  </div>
+
+  <!-- SUCCESS VIEW -->
+  <div class="success-screen" id="success-view">
+    <span class="success-icon">✦</span>
+    <h2 class="success-title">Thank you so much.</h2>
+    <p class="success-sub">Your words mean more than you know. I'll be in touch if I have any questions before featuring it.</p>
+  </div>
+
+</main>
+
+<footer class="page-footer">
+  <a href="https://mbithemutavi.com">← Back to portfolio</a>
+</footer>
+
+<script>
+const form    = document.getElementById('testi-form');
+const btn     = document.getElementById('testi-submit');
+const formView    = document.getElementById('form-view');
+const successView = document.getElementById('success-view');
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  // Honeypot check
+  if (form.querySelector('[name="_gotcha"]').value) return;
+
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    });
+
+    if (res.ok) {
+      formView.style.display = 'none';
+      successView.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      btn.textContent = 'Something went wrong — try again';
+      btn.disabled = false;
+    }
+  } catch(err) {
+    btn.textContent = 'Network error — try again';
+    btn.disabled = false;
+  }
+});
+</script>
+
+</body>
+</html>

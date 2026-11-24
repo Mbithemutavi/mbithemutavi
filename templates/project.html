@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{head}}
+<title>{{title-text}} | Mbithe Mutavi</title>
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="{{canonical}}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{title-text}} | Mbithe Mutavi">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{og-image}}">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+{{header}}
+
+<main class="proj-page-inner">
+  <h1 class="proj-page-title">{{title}}</h1>
+  <div class="proj-page-meta">
+    <div class="proj-meta-row"><strong>Client</strong> : {{client}}</div>
+    <div class="proj-meta-row"><strong>Category</strong> : {{tag}}</div>
+    <div class="proj-meta-row"><strong>Role</strong> : {{role}}</div>
+    {{live-link}}
+  </div>
+  <div class="proj-page-desc">{{desc}}</div>
+  {{gallery}}
+  {{testimonials}}
+  <nav class="proj-page-nav">
+    <a class="proj-nav-btn" href="/#works">← Back to all works</a>
+    <a class="proj-nav-btn" href="/{{next-slug}}">Next project →</a>
+  </nav>
+</main>
+
+{{footer}}
+
+{{contact-modal}}
+
+<script src="/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{head}}
+<title>Free Illustration Packs | Mbithe Mutavi</title>
+<meta name="description" content="Free hand-drawn illustration packs for feminist organisations, NGOs and advocacy campaigns. Download the Period Pack and more, by Mbithe Mutavi.">
+<link rel="canonical" href="https://mbithemutavi.com/resources">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Illustration Packs | Mbithe Mutavi">
+<meta property="og:description" content="Free hand-drawn illustration packs for feminist organisations, NGOs and advocacy campaigns.">
+<meta property="og:url" content="https://mbithemutavi.com/resources">
+<style>
+/* ═══ RESOURCES PAGE ONLY ═══ */
+
+
+.res-intro {
+  padding: 80px 64px 40px;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+.res-headline {
+  font-family: var(--sans);
+  font-size: clamp(42px, 6.5vw, 84px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+  max-width: 860px;
+}
+.res-headline em {
+  color: #0522FF;
+  font-family: 'More Sugar', serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.res-sub {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 520px;
+}
+
+.res-section { padding: 24px 64px 80px; max-width: 1360px; margin: 0 auto; }
+
+.packs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 36px; }
+.packs button {
+  font-family: var(--sans); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 12px 22px; background: transparent; color: var(--black);
+  border: 1px solid var(--black); cursor: pointer;
+}
+.packs button[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: var(--cream); }
+
+.pack-head {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  gap: 24px; flex-wrap: wrap; margin-bottom: 32px;
+  padding-top: 32px; border-top: 1px solid var(--border);
+}
+.pack-head h2 { font-family: var(--sans); font-size: clamp(26px, 3.5vw, 38px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+.pack-head p { margin-top: 8px; font-size: 14px; color: var(--muted); line-height: 1.7; max-width: 520px; }
+.pack-meta { margin-top: 12px; font-family: 'More Sugar', serif; font-size: 20px; color: var(--blue); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 40px 32px; }
+.tile { background: transparent; border: 0; padding: 0; text-align: left; cursor: pointer; font: inherit; color: inherit; display: block; width: 100%; }
+.tile-art { position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: #E6E6E0; }
+.tile:nth-child(3n+2) .tile-art { background: #EAFFB8; }
+.tile:nth-child(3n) .tile-art { background: #E3E6FF; }
+.tile-art img { width: 100%; height: 100%; object-fit: contain; padding: 12%; display: block; transition: transform 0.5s ease; }
+.tile:hover .tile-art img { transform: scale(1.04); }
+.tile-foot { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0 0; gap: 16px; }
+.tile-name { font-size: 13px; font-weight: 600; line-height: 1.4; }
+.tile-fmt { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
+.ph { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+.ph svg { width: 44%; max-width: 110px; color: var(--muted); }
+.ph span { font-family: 'More Sugar', serif; font-size: 18px; color: var(--muted); }
+
+.prev-art { aspect-ratio: 1 / 1; background: #EAFFB8; margin-bottom: 24px; position: relative; }
+.prev-art img { width: 100%; height: 100%; object-fit: contain; padding: 10%; display: block; }
+.prev-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+.btn-line { background: transparent; color: var(--black); border: 1px solid var(--black); }
+.btn-line:hover { background: var(--black); color: var(--cream); }
+.dl-ico { width: 14px; height: 14px; vertical-align: -2px; margin-right: 8px; }
+
+.res-info {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  padding: 64px 64px 80px; max-width: 1360px; margin: 0 auto;
+  border-top: 1px solid var(--border);
+}
+.res-info h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 14px; }
+.res-info ul { padding-left: 1.1em; font-size: 14px; color: var(--muted); line-height: 1.8; }
+.res-info p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 24px; max-width: 460px; }
+
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+@media (max-width: 800px) {
+  .res-intro { padding: 56px 24px 32px; }
+  .res-section { padding: 16px 24px 56px; }
+  .grid { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
+  .res-info { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px 56px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+{{header}}
+
+<main>
+  <section class="res-intro">
+    <h1 class="res-headline">Free <em>illustrations</em> for feminist and social justice work</h1>
+    <p class="res-sub">Hand-drawn packs made for reports, campaigns and social posts. Download a single piece or a whole pack and use them in your own work.</p>
+  </section>
+
+  <section class="res-section">
+    <div class="packs" id="packs" role="group" aria-label="Choose a pack"></div>
+    <div id="pack" aria-live="polite"></div>
+  </section>
+
+  <section class="res-info" id="licence">
+    <div>
+      <h3>How you can use them</h3>
+      <ul>
+        <li>Free for personal and commercial use, including NGO reports, campaigns and social media.</li>
+        <li>Credit is appreciated: "Illustration by Mbithe Mutavi".</li>
+        <li>Please don't resell, redistribute or repackage the illustrations, or present them as your own.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Need something specific?</h3>
+      <p>If your organisation needs a pack on a topic that isn't here yet, or illustrations drawn for a particular campaign, get in touch.</p>
+      <button class="btn-blue" id="open-contact">Request a pack</button>
+    </div>
+  </section>
+</main>
+
+{{footer}}
+
+{{contact-modal}}
+
+<!-- ═══ PREVIEW MODAL (resources page only) ═══ -->
+<div class="modal-overlay" id="preview-modal" role="dialog" aria-modal="true" aria-labelledby="prev-title">
+  <div class="modal-box">
+    <button class="modal-close" id="prev-close" aria-label="Close preview">✕</button>
+    <h3 class="modal-title" id="prev-title" style="margin-bottom:20px;padding-right:40px"></h3>
+    <div class="prev-art"><img id="prev-img" alt=""></div>
+    <div class="prev-actions" id="prev-actions"></div>
+  </div>
+</div>
+
+<script src="/js/site.js"></script>
+<script>
+/* ------------------------------------------------------------------
+   ADD OR EDIT PACKS HERE.
+   Files live in resources/<pack id>/<file>.png (and .svg if svg:true).
+   Each item is { n: "Display name", f: "file-name-without-extension" }.
+   Keep each zip under 25MB for Cloudflare Pages, or link to an
+   external host instead.
+------------------------------------------------------------------- */
+const PACKS = [
+  {
+    id: "period-pack",
+    title: "Period Pack",
+    blurb: "Illustrations for menstrual health education, period poverty campaigns and hygiene advocacy.",
+    zip: "/resources/period-pack/period-pack.zip",
+    svg: true,
+    items: [
+      { n: "Menstrual cup",    f: "menstrual-cup" },
+      { n: "Pads",             f: "pads" },
+      { n: "Period underwear", f: "period-underwear" },
+      { n: "Tampons",          f: "tampons" },
+      { n: "Hot water bottle", f: "hot-water-bottle" },
+      { n: "Cycle tracking",   f: "cycle-tracking" },
+      { n: "Cramps",           f: "cramps" },
+      { n: "Sharing supplies", f: "sharing-supplies" }
+    ]
+  }
+  /* Next pack, same shape:
+  ,{ id:"srhr-pack", title:"SRHR Pack", blurb:"...", zip:"/resources/srhr-pack/srhr-pack.zip", svg:true, items:[ ... ] }
+  */
+];
+
+const DL = '<svg class="dl-ico" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10M5.5 9L10 13.5 14.5 9M3.5 16.5h13"/></svg>';
+const PH  = '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 6" stroke-linecap="round" aria-hidden="true"><path d="M50 8c20 0 38 14 40 36 2 22-14 46-40 48S10 78 10 52 28 8 50 8z"/></svg>';
+
+const packsEl = document.getElementById('packs');
+const packEl  = document.getElementById('pack');
+const prevModal = document.getElementById('preview-modal');
+let current = 0;
+
+const src = (p, i, ext) => `/resources/${p.id}/${i.f}.${ext}`;
+
+function renderSwitcher() {
+  if (PACKS.length < 2) { packsEl.hidden = true; return; }
+  packsEl.innerHTML = '';
+  PACKS.forEach((p, i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.textContent = p.title;
+    b.setAttribute('aria-pressed', i === current);
+    b.addEventListener('click', () => { current = i; renderSwitcher(); renderPack(); });
+    packsEl.appendChild(b);
+  });
+}
+
+function renderPack() {
+  const p = PACKS[current];
+  const fmt = p.svg ? 'PNG, SVG' : 'PNG';
+  packEl.innerHTML = `
+    <div class="pack-head">
+      <div>
+        <h2>${p.title}</h2>
+        <p>${p.blurb}</p>
+        <div class="pack-meta">${p.items.length} illustrations</div>
+      </div>
+      <a class="btn-blue" href="${p.zip}" download>${DL}Download full pack</a>
+    </div>
+    <div class="grid" id="grid"></div>`;
+  const grid = document.getElementById('grid');
+  p.items.forEach(item => {
+    const t = document.createElement('button');
+    t.type = 'button'; t.className = 'tile';
+    t.setAttribute('aria-label', 'Preview ' + item.n);
+    const art = document.createElement('div');
+    art.className = 'tile-art';
+    const img = new Image();
+    img.src = src(p, item, 'png'); img.alt = ''; img.loading = 'lazy'; img.decoding = 'async';
+    img.onerror = () => {
+      img.remove();
+      art.insertAdjacentHTML('beforeend', '<div class="ph">' + PH + '<span>Coming soon</span></div>');
+      t.dataset.missing = '1';
+    };
+    art.appendChild(img);
+    t.appendChild(art);
+    t.insertAdjacentHTML('beforeend', `<div class="tile-foot"><span class="tile-name">${item.n}</span><span class="tile-fmt">${fmt}</span></div>`);
+    t.addEventListener('click', () => openPreview(p, item, t.dataset.missing === '1'));
+    grid.appendChild(t);
+  });
+}
+
+function openPreview(p, item, missing) {
+  document.getElementById('prev-title').textContent = item.n;
+  const img = document.getElementById('prev-img');
+  img.alt = item.n;
+  img.style.visibility = missing ? 'hidden' : 'visible';
+  img.src = missing ? '' : src(p, item, 'png');
+  const actions = document.getElementById('prev-actions');
+  actions.innerHTML = '';
+  if (missing) {
+    actions.innerHTML = '<p class="modal-sub" style="margin:0">This one is still being drawn. Check back soon.</p>';
+  } else {
+    actions.insertAdjacentHTML('beforeend', `<a class="btn-blue" href="${src(p, item, 'png')}" download>${DL}PNG</a>`);
+    if (p.svg) actions.insertAdjacentHTML('beforeend', `<a class="btn-blue btn-line" href="${src(p, item, 'svg')}" download>${DL}SVG</a>`);
+  }
+  prevModal.classList.add('open'); document.body.style.overflow = 'hidden';
+}
+function closePreview() { prevModal.classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('prev-close').addEventListener('click', closePreview);
+prevModal.addEventListener('click', e => { if (e.target === prevModal) closePreview(); });
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePreview(); });
+
+renderSwitcher();
+renderPack();
+</script>
+</body>
+</html>

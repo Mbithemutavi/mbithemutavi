@@ -82,6 +82,9 @@ body {
   line-height: 1.75;
   max-width: 480px;
 }
+.hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-outline { background: transparent; color: var(--black); border: 1px solid var(--black); }
+.btn-outline:hover { background: var(--black); color: var(--cream); }
 
 /* ─── CLIENT LOGO GRID ─── */
 .clients-grid {

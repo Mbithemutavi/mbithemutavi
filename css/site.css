@@ -110,6 +110,14 @@ body {
   }
 
   /* Filled */
+  .btn-row {
+  display: flex;
+  gap: 14px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  margin-bottom: 56px;
+}
   .btn-fill {
     background: var(--blue);
     color: var(--cream);

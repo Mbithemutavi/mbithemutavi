@@ -500,9 +500,24 @@ footer {
   transition: opacity 0.2s;
 }
 .proj-nav-btn:hover { opacity: 0.5; }
+.piece { position: relative; }
+
+.piece::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.piece img {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none; 
+}
 
 /* ─── RESPONSIVE ─── */
-@media (max-width: 800px) {
+@media (max-width: 720px) {
   .hero { padding: 56px 24px 48px; grid-template-columns: 1fr; gap: 48px; }
   .clients-grid { gap: 24px 16px; }
   .client-logo-item { height: 72px; }
@@ -519,7 +534,11 @@ footer {
   .modal-box { padding: 32px 22px; }
   .site-logo, .proj-page-logo { padding: 14px 24px; }
   .site-mark img { height: 44px; }
+  html, body {
+  overflow-x: clip;
 }
+}
+
 
 /* ─── ADDED FOR SEPARATE PAGES ─── */
 a.proj-card { display: block; text-decoration: none; color: inherit; }

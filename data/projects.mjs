@@ -27,7 +27,7 @@ export const PROJECTS = [
     
     { type: "image", src: "Images/Debunk Visual storytelling/fuliza.jpg" },
     { type: "image", src: "Images/Debunk Visual storytelling/inner thighs.jpg" },
-    { type: "image", src: "Images/Debunk Visual storytelling/Stitches Subarus Street Cricket Memories of a Childhood on Left Street_1.jpg" },
+    { type: "image", src: "Images/Debunk Visual storytelling/Stitches Subarus Street Cricket Memories of a Childhood on Left Street.webp" },
     { type: "image", src: "Images/Debunk Visual storytelling/Literature to philosphy.jpg" },
     { type: "image", src: "Images/Debunk Visual storytelling/PEOPLE ILLUSTRATION.jpg" },
     { type: "image", src: "Images/Debunk Visual storytelling/Artboard 6.jpg" },
@@ -137,7 +137,6 @@ export const PROJECTS = [
     gallery: [
       { type: "image", src: "Images/unaids/zambia-factsheet-pdf.png" },
       { type: "image", src: "Images/unaids/35e056157531291-637cbb92b722b.png" },
-      { type: "image", src: "Images/unaids/5c9858157531291-637cbb92b9996.png" },
       { type: "image", src: "Images/unaids/678a9b157531291-637cbb92b7f75.png" },
       { type: "image", src: "Images/unaids/d81471157531291-637cbb92b8cf6.png" },
     ],
@@ -301,7 +300,6 @@ export const PROJECTS = [
     cover: "Images/Stelim Africa/cover.jpg",
     desc: "Stelim Group Africa Limited operates across three distinct sectors; Supermarket, Hardware, and Warehouse, each with its own audience, environment, and visual demands. The brief was to build a single brand identity strong enough to represent the group's ambition while giving each business a presence that felt considered, not generic.",
     gallery: [
-      { type: "image", src: "Images/stelim-africa/artboard-2-copy.png" },
       { type: "image", src: "Images/Stelim Africa/Screenshot 2026-07-02 at 12.47.08.png" },
       { type: "image", src: "Images/Stelim Africa/Artboard 3.jpg" },
       { type: "image", src: "Images/Stelim Africa/Artboard 5 copy 2.jpg" },

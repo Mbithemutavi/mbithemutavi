@@ -194,6 +194,8 @@ body::before {
     d.appendChild(img);
     gallery.appendChild(d);
   });
+  gallery.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+  img.draggable = false;
 </script>
 
 </body>

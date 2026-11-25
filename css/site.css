@@ -517,18 +517,20 @@ footer {
 }
 
 /* ─── RESPONSIVE ─── */
-@media (max-width: 720px) {
+@media (max-width: 700px) {
   .hero { padding: 48px 24px; grid-template-columns: 1fr; gap: 40px; }
   .clients-grid { gap: 24px 16px; }
   .client-logo-item { height: 72px; }
   .client-logo-item img { max-height: 56px; max-width: 96px; }
   .works-section { padding: 48px 24px; }
-  .works-grid { grid-template-columns: 1fr; gap: 32px 0; }
+  .works-grid { display: block; min-width: none; max-width: 100%; }
   .cta-section { padding: 56px 24px; }
   footer { padding: 44px 24px 0; }
   .footer-links { gap: 28px; }
   .peek-header { padding: 0 24px 28px; }
   .proj-page-inner { padding: 48px 24px 56px; }
+  .proj-page-img { display: block; width: 100%; max-width: 100%; height: auto; }
+  .project-meta { display: flex; flex-direction: column; gap: 6px; }
   .proj-testimonial { padding: 24px 22px; }
   .form-row { grid-template-columns: 1fr; }
   .modal-box { padding: 32px 22px; }

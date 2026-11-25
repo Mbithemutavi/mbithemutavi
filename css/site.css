@@ -143,10 +143,7 @@ body {
     outline-offset: 3px;
   }
 
-  /* Clicked state: lime ring pulse, added by the script below */
-  .btn.is-clicked {
-    box-shadow: 0 0 0 6px var(--lime);
-  }
+ 
 
 /* ─── CLIENT LOGO GRID ─── */
 .clients-grid {

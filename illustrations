@@ -160,27 +160,27 @@ body::before {
     { src: "Images/Illustrations/Untitled_Artwork 8.jpg", alt: "fashion" },
     { src: "Images/Illustrations/Untitled_Artwork 7.jpg", alt: "incomplete gas station" },
     { src: "Images/Illustrations/Untitled_Artwork 4.jpg", alt: "wangari mathai" },
-    { src: "Images/Illustrations/Untitled_Artwork 1.jpg", alt: "fashion coat of many colors" }
-    { src: "Images/Illustrations/Night_Out.jpg", alt: "" }
-    { src: "Images/Illustrations/Ngugi_Wa_Thiong'o_Family.jpg", alt: "" }
-    { src: "Images/Illustrations/Julia_Dreams_Sketchbook_3_[Large].jpg", alt: "" }
-    { src: "Images/Illustrations/Julia_Dreams_Sketchbook_1_[Large] 5.jpg", alt: "" }
-    { src: "Images/Illustrations/Julia_Dreams_Sketchbook_1_[Large] 4.jpg", alt: "" }
-    { src:"Images/Illustrations/IMG_1850.PNG", alt: "" }
-    { src:"Images/Illustrations/IMG_1849.PNG", alt: "" }
-    { src:"Images/Illustrations/IMG_1543.JPG"}
-    { src:"Images/Illustrations/IMG_1523.JPG"}
-    { src:"Images/Illustrations/IMG_1487.JPG"}
-    { src:"Images/Illustrations/IMG_1475.PNG"}
-    { src:"Images/Illustrations/IMG_0084.JPG"}
-    { src:"Images/Illustrations/IMG_0077.JPG"}
-    { src:"Images/Illustrations/Foodies.png"}
-    { src:"Images/Illustrations/Eyes_Have_It.jpg"}
-    { src:"Images/Illustrations/Creative_Just.png"}
-    { src:"Images/Illustrations/Creative_Just.png"}
-    { src:"Images/Illustrations/Black_Girl.jpg"}
-    { src:"Images/Illustrations/Avocado_.png"}
-    { src:"Images/Illustrations/Anik.jpg"}
+    { src: "Images/Illustrations/Untitled_Artwork 1.jpg", alt: "fashion coat of many colors" },
+    { src: "Images/Illustrations/Night_Out.jpg", alt: "" },
+    { src: "Images/Illustrations/Ngugi_Wa_Thiong'o_Family.jpg", alt: "" },
+    { src: "Images/Illustrations/Julia_Dreams_Sketchbook_3_[Large].jpg", alt: "" },
+    { src: "Images/Illustrations/Julia_Dreams_Sketchbook_1_[Large] 5.jpg", alt: "" },
+    { src: "Images/Illustrations/Julia_Dreams_Sketchbook_1_[Large] 4.jpg", alt: "" },
+    { src:"Images/Illustrations/IMG_1850.PNG", alt: "" },
+    { src:"Images/Illustrations/IMG_1849.PNG", alt: "" },
+    { src:"Images/Illustrations/IMG_1543.JPG"},
+    { src:"Images/Illustrations/IMG_1523.JPG"},
+    { src:"Images/Illustrations/IMG_1487.JPG"},
+    { src:"Images/Illustrations/IMG_1475.PNG"},
+    { src:"Images/Illustrations/IMG_0084.JPG"},
+    { src:"Images/Illustrations/IMG_0077.JPG"},
+    { src:"Images/Illustrations/Foodies.png"},
+    { src:"Images/Illustrations/Eyes_Have_It.jpg"},
+    { src:"Images/Illustrations/Creative_Just.png"},
+    { src:"Images/Illustrations/Creative_Just.png"},
+    { src:"Images/Illustrations/Black_Girl.jpg"},
+    { src:"Images/Illustrations/Avocado_.png"},
+    { src:"Images/Illustrations/Anik.jpg"},
 
   ];
 

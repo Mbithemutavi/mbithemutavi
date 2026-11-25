@@ -518,7 +518,7 @@ footer {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 720px) {
-  .hero { padding: 56px 24px 48px; grid-template-columns: 1fr; gap: 48px; }
+  .hero { padding: 48px 24px; grid-template-columns: 1fr; gap: 40px; }
   .clients-grid { gap: 24px 16px; }
   .client-logo-item { height: 72px; }
   .client-logo-item img { max-height: 56px; max-width: 96px; }

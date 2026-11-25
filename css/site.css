@@ -90,58 +90,48 @@ body {
 .hero-logos {
   min-width: 0;
 }
-  /* Filled */
-  .btn-row {
+  /* Hero links */
+.hero-links {
   display: flex;
-  gap: 14px;
-  justify-content: flex-start;
+  gap: 40px;
   flex-wrap: wrap;
-  margin-top: 28px;
-  margin-bottom: 0;
+  margin-top: 36px;
 }
-.btn {
-  display: inline-block;
-  font-family: "DM Sans", system-ui, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+
+.hero-link {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   text-decoration: none;
-  padding: 14px 30px;
-  border-radius: 999px;
-  border: 2px solid var(--blue);
-  cursor: pointer;
-  transition: transform .15s ease, background-color .2s ease,
-              color .2s ease, box-shadow .2s ease;
+  color: #0A0A0A;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #0A0A0A;
+  transition: color .2s ease, border-color .2s ease, transform .15s ease;
 }
-  .btn-fill {
-    background: var(--blue);
-    color: var(--cream);
-  }
-  .btn-fill:hover {
-    background: #0319c9;
-    border-color: #0319c9;
-  }
 
-  /* Outline, no fill */
-  .btn-outline {
-    background: transparent;
-    color: var(--blue);
-  }
-  .btn-outline:hover {
-    background: var(--blue);
-    color: var(--cream);
-  }
+.hero-link:hover {
+  color: var(--blue);
+  border-bottom-color: var(--blue);
+}
 
-  /* Press feedback */
-  .btn:active {
-    transform: scale(0.95);
-  }
+/* Press feedback */
+.hero-link:active {
+  transform: translateY(2px);
+}
 
-  /* Keyboard focus */
-  .btn:focus-visible {
-    outline: 3px solid var(--lime);
-    outline-offset: 3px;
-  }
+/* Clicked state, added by the script */
+.hero-link.is-clicked {
+  color: var(--blue);
+  border-bottom-color: var(--lime);
+}
+
+/* Keyboard focus */
+.hero-link:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 6px;
+}
 
  
 

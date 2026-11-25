@@ -23,11 +23,11 @@
     <em>communicate</em> their missions
   </h1>
   <p class="hero-sub">Design consultant &amp; visual storyteller based in Nairobi, working with NGOs, feminist organisations, and social enterprises.</p>
-  <div class="btn-row">
-  <a class="btn btn-fill"
+  <div class="hero-links">
+  <a class="hero-link"
      href="https://app.notion.com/p/Easter-Mbithe-Mutavi-Resume-3422609b253781ef812cd20fd5658a1f"
      target="_blank" rel="noopener">View my resume</a>
-  <a class="btn btn-outline"
+  <a class="hero-link"
      href="/illustrations.html">Personal illustrations</a>
 </div>
   </div>
@@ -59,12 +59,12 @@
 
 <script src="/js/site.js"></script>
 <script>
-  document.querySelectorAll('.btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      btn.classList.add('is-clicked');
-      setTimeout(function () { btn.classList.remove('is-clicked'); }, 600);
-    });
+  document.querySelectorAll('.hero-link').forEach(function (link) {
+  link.addEventListener('click', function () {
+    link.classList.add('is-clicked');
+    setTimeout(function () { link.classList.remove('is-clicked'); }, 600);
   });
+});
 </script>
 </body>
 </html>

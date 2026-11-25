@@ -82,9 +82,68 @@ body {
   line-height: 1.75;
   max-width: 480px;
 }
-.hero-buttons { display: flex; gap: 12px; flex-wrap: wrap;}
-.btn-outline { background: transparent; color: var(--black); border: 1px solid var(--black); }
-.btn-outline:hover { background: var(--black); color: var(--cream); }
+:root {
+    --cream: #FFFFF8;
+    --blue: #0522FF;
+    --lime: #AAFF0C;
+  }
+
+  .btn-row {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: "DM Sans", system-ui, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 999px;
+    border: 2px solid var(--blue);
+    cursor: pointer;
+    transition: transform .15s ease, background-color .2s ease,
+                color .2s ease, box-shadow .2s ease;
+  }
+
+  /* Filled */
+  .btn-fill {
+    background: var(--blue);
+    color: var(--cream);
+  }
+  .btn-fill:hover {
+    background: #0319c9;
+    border-color: #0319c9;
+  }
+
+  /* Outline, no fill */
+  .btn-outline {
+    background: transparent;
+    color: var(--blue);
+  }
+  .btn-outline:hover {
+    background: var(--blue);
+    color: var(--cream);
+  }
+
+  /* Press feedback */
+  .btn:active {
+    transform: scale(0.95);
+  }
+
+  /* Keyboard focus */
+  .btn:focus-visible {
+    outline: 3px solid var(--lime);
+    outline-offset: 3px;
+  }
+
+  /* Clicked state: lime ring pulse, added by the script below */
+  .btn.is-clicked {
+    box-shadow: 0 0 0 6px var(--lime);
+  }
 
 /* ─── CLIENT LOGO GRID ─── */
 .clients-grid {
